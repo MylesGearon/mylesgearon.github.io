@@ -2,6 +2,8 @@ import webpack from 'webpack'
 import cssnano from 'cssnano'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import Weinre from 'weinre-webpack'
+import ip from 'ip'
 import config from '../config'
 import _debug from 'debug'
 
@@ -50,7 +52,7 @@ webpackConfig.output = {
 webpackConfig.plugins = [
   new webpack.DefinePlugin(config.globals),
   new HtmlWebpackPlugin({
-    template: paths.client('index.html'),
+    template: paths.client('index.ejs'),
     hash: false,
     favicon: paths.client('static/favicon.ico'),
     filename: 'index.html',
@@ -65,8 +67,16 @@ if (__DEV__) {
   debug('Enable plugins for live development (HMR, NoErrors).')
   webpackConfig.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new Weinre({
+      runServer: true,
+      boundHost: ip.address(),
+      httpPort: config.weinre_server_port
+    })
   )
+  webpackConfig.weinreDebugTarget = `
+    <script src="http://${config.server_host}:${config.weinre_server_port}/target/target-script-min.js"></script> '
+  `
 } else if (__PROD__) {
   debug('Enable plugins for production (OccurenceOrder, Dedupe & UglifyJS).')
   webpackConfig.plugins.push(

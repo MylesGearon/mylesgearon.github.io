@@ -28,6 +28,7 @@ const config = {
   // ----------------------------------
   server_host : localip, // use string 'localhost' to prevent exposure on local network
   server_port : process.env.PORT || 3000,
+  weinre_server_port: 3002,
 
   // ----------------------------------
   // Compiler Configuration

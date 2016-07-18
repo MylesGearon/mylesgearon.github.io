@@ -7,5 +7,5 @@ const port = config.server_port
 const host = config.server_host
 
 server.listen(port)
-debug(`Server is now running at http://${host}:${port}.`)
-debug(`Server accessible via localhost:${port} if you are using the project defaults.`)
+debug(`Dev server is now running at http://${host}:${port}.`)
+debug(`Dev server accessible via localhost:${port} if you are using the project defaults.`)

@@ -51,7 +51,7 @@
       }
     },
     "deploy:prod": {
-      "command": "npm run deploy && npm run pushdist",
+      "command": "npm run deploy",
       "env": {
         "NODE_ENV": "production",
         "DEBUG": "app:*"
@@ -152,6 +152,7 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.6.0"
+    "webpack-hot-middleware": "^2.6.0",
+    "weinre-webpack": "0.0.8"
   }
 }
