@@ -8,7 +8,7 @@
     "npm": "^3.0.0"
   },
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "cd dist && ls | grep -v .git | xargs rm && cd ..",
     "compile": "better-npm-run compile",
     "lint": "eslint src tests server",
     "lint:fix": "npm run lint -- --fix",
@@ -21,7 +21,7 @@
     "deploy:dev": "better-npm-run deploy:dev",
     "deploy:prod": "better-npm-run deploy:prod",
     "codecov": "cat coverage/*/lcov.info | codecov",
-    "pushdist": "git subtree push --prefix dist origin master"
+    "pushdist": "cd dist && git add --all && git commit -m \"Release at $(date)\" && git push"
   },
   "betterScripts": {
     "compile": {
@@ -51,7 +51,7 @@
       }
     },
     "deploy:prod": {
-      "command": "npm run deploy",
+      "command": "npm run deploy && npm run pushdist",
       "env": {
         "NODE_ENV": "production",
         "DEBUG": "app:*"
