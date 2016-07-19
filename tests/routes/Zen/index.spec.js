@@ -17,5 +17,4 @@ describe('(Route) Zen', () => {
     expect(_route.path).to.equal('zen');
   });
 
-
 })

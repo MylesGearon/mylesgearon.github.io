@@ -10,14 +10,14 @@ export const SAVE_CURRENT_ZEN = 'SAVE_CURRENT_ZEN'
 // Actions
 // ----------------------------------------------------------------------------
 
-export function requestZen() {
+export function requestZen () {
   return {
     type: REQUEST_ZEN
   }
 }
 
 let availableId = 0
-export function recieveZen(value) {
+export function recieveZen (value) {
   return {
     type: RECIEVE_ZEN,
     payload: {
@@ -27,7 +27,7 @@ export function recieveZen(value) {
   }
 }
 
-export function saveCurrentZen() {
+export function saveCurrentZen () {
   return {
     type: SAVE_CURRENT_ZEN
   }
@@ -37,7 +37,6 @@ export const fetchZen = () => {
   return (dispatch, getState) => {
     return new Promise(resolve => {
       dispatch(requestZen())
-
       fetch('https://api.github.com/zen')
         .then(data => data.text())
         .then(text => dispatch(recieveZen(text)))
@@ -69,8 +68,8 @@ const ACTION_HANDLERS = {
     })
   },
   [SAVE_CURRENT_ZEN]: state => {
-    return state.current !== null ?
-      ({...state, saved: state.saved.concat(state.current)})
+    return state.current !== null
+    ? ({...state, saved: state.saved.concat(state.current)})
     : state
   }
 }
