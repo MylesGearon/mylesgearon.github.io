@@ -22,7 +22,7 @@ export const Header = () => (
       </Isvg>
     </IndexLink>
     <Link
-      to='/counter'
+      to='/about'
       className={classes.headerLink + ' ' + classes.textLink}
       activeClassName={classes.activeRoute}>
       About

@@ -12,6 +12,9 @@ export const createRoutes = (store) => ({
   getChildRoutes (location, cb) {
     require.ensure([], require => {
       cb(null, [
+        require('./About').default,
+        require('./Projects').default,
+        require('./Contact').default,
         require('./Counter').default(store),
         require('./Zen').default(store)
       ])
