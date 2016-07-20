@@ -1,4 +1,41 @@
-.activeRoute {
-  font-weight: bold;
-  text-decoration: underline;
+.header {
+  height: 80px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  font-family: 'Lato', Arial;
+}
+
+.headerLink {
+  color: #AAAAAA;
+  stroke: #AAAAAA;
+  text-decoration: none;
+  border: 1px solid rgba(#FFF, 0);
+
+  transition: all .5s;
+
+  &.activeRoute, .activeRoute * {
+    color: white;
+    stroke: #FFFFFF;
+    border-bottom: 1px solid white;
+  }
+}
+
+.logoContainer {
+  $height: 40px;
+  height: $height;
+  width: $height*7/6;
+
+  * {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.textLink {
+  padding: 10px 0;
 }
