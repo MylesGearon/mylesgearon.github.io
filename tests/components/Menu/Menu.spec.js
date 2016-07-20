@@ -1,6 +1,6 @@
 import React from 'react'
-import { Header } from 'components/Header/Header'
-import classes from 'components/Header/Header.scss'
+import { Menu } from 'components/Menu/Menu'
+import classes from 'components/Menu/Menu.scss'
 import { IndexLink, Link } from 'react-router'
 import { shallow } from 'enzyme'
 
@@ -8,7 +8,7 @@ describe('(Component) Header', () => {
   let _wrapper
 
   beforeEach(() => {
-    _wrapper = shallow(<Header/>)
+    _wrapper = shallow(<Menu/>)
   })
 
   it('Renders a welcome message', () => {
