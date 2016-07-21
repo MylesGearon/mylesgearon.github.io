@@ -13,7 +13,6 @@ describe('(Route) Zen', () => {
   });
 
   it('Should have the path "zen"', () => {
-    console.log(_route);
     expect(_route.path).to.equal('zen');
   });
 
