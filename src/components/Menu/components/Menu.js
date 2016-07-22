@@ -5,7 +5,7 @@ import Pulldown from './Pulldown.js'
 
 const menuStyleBreakpoint = 700
 
-export const Menu = () => (
+export const Menu = (
   <div>
     <Header
       breakpoint={menuStyleBreakpoint} />
