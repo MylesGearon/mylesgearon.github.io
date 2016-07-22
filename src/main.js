@@ -51,8 +51,8 @@ if (__DEV__) {
     const renderApp = render
     const renderError = (error) => {
       const RedBox = require('redbox-react').default
-
-      ReactDOM.render(<RedBox error={error} />, MOUNT_NODE)
+      const style = require('../config/redboxStyles.js').default
+      ReactDOM.render(<RedBox error={error} style={style} />, MOUNT_NODE)
     }
 
     // Wrap render in try/catch
