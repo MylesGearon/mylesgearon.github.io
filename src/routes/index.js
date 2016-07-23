@@ -7,7 +7,7 @@ import Home from './Home'
 
 export const createRoutes = (store) => ({
   path: '/',
-  component: CoreLayout(store),
+  component: CoreLayout,
   indexRoute: Home,
   getChildRoutes (location, cb) {
     require.ensure([], require => {
