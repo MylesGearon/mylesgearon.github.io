@@ -2,17 +2,24 @@
 // Constants
 // ----------------------------------------------------------------------------
 
-export const ANIMATE = 'ANIMATE'
+export const ANIMATE_IN_MENU = 'ANIMATE_IN_MENU'
+export const ANIMATE_OUT_MENU = 'ANIMATE_OUT_MENU'
 export const FINISH_ANIMATION = 'FINISH_ANIMATION'
 
 // ----------------------------------------------------------------------------
 // Actions
 // ----------------------------------------------------------------------------
 
-export function animate (nextMenuStyle) {
+export function animateInMenu (nextMenuSize) {
   return {
-    type: ANIMATE,
-    payload: nextMenuStyle
+    type: ANIMATE_IN_MENU,
+    payload: nextMenuSize
+  }
+}
+
+export function animateOutMenu () {
+  return {
+    type: ANIMATE_OUT_MENU
   }
 }
 
@@ -23,7 +30,8 @@ export function finishAnimation () {
 }
 
 export const actions = {
-  animate,
+  animateInMenu,
+  animateOutMenu,
   finishAnimation
 }
 
@@ -32,12 +40,15 @@ export const actions = {
 // ----------------------------------------------------------------------------
 
 const ACTION_HANDLERS = {
-  [ANIMATE]: (state, action) => {
-    return ({...state, animating: true, next: action.payload})
+  [ANIMATE_IN_MENU]: (state, action) => {
+    return ({...state, animating: true, current: action.payload})
+  },
+  [ANIMATE_OUT_MENU]: state => {
+    return ({...state, animating: false})
   },
   [FINISH_ANIMATION]: state => {
     return ({
-      current: state.next,
+      ...state,
       next: null,
       animating: false
     })

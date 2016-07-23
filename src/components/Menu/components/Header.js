@@ -1,7 +1,6 @@
 import React from 'react'
 import Isvg from 'react-inlinesvg'
 import { IndexLink, Link } from 'react-router'
-import MediaQuery from 'react-responsive'
 
 import classes from '../styles/Header.scss'
 
@@ -10,14 +9,9 @@ import FallbackLogo from '../assets/logo.svg'
 
 export default class Header extends React.Component {
 
-  static propTypes = {
-    breakpoint: React.PropTypes.number.isRequired
-  }
-
   render () {
     return (
-      <MediaQuery
-        maxWidth={this.props.breakpoint}
+      <div
         className={classes.header}>
         <IndexLink to='/'
           className={classes.headerLink}
@@ -50,7 +44,7 @@ export default class Header extends React.Component {
           activeClassName={classes.activeRoute}>
           Contact
         </Link>
-      </MediaQuery>
+      </div>
     )
   }
 }
