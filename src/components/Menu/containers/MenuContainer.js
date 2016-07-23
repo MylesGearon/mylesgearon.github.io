@@ -1,9 +1,15 @@
 import { connect } from 'react-redux'
+import { actions } from '../modules/menu'
 
 import Menu from '../components/Menu'
 
-const mapStateToProps = state => ({
-  pathname: state.router.locationBeforeTransitions.pathname
-})
+const mapStateToProps = state => {
+  return ({
+    currentMenuStyle: state.menu.current,
+    nextMenuStyle: state.menu.next,
+    animatingMenu: state.menu.animating
+  })
+}
 
-export default connect(mapStateToProps)(Menu)
+const mapDispatchToProps = actions
+export default connect(mapStateToProps, mapDispatchToProps)(Menu)

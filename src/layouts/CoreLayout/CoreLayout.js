@@ -3,17 +3,20 @@ import Menu from '../../components/Menu'
 import classes from './CoreLayout.scss'
 import '../../styles/core.scss'
 
-export const CoreLayout = ({ children }) => (
-  <div className={classes.container}>
-    <Menu />
-    <div className={classes.mainContainer}>
-      {children}
-    </div>
-  </div>
-)
+export default class CoreLayout extends React.Component {
 
-CoreLayout.propTypes = {
-  children: React.PropTypes.element.isRequired
+  static propTypes = {
+    children: React.PropTypes.element.isRequired
+  }
+
+  render () {
+    return (
+      <div className={classes.container}>
+        <Menu {...this.props} />
+        <div className={classes.mainContainer}>
+          {this.props.children}
+        </div>
+      </div>
+    )
+  }
 }
-
-export default CoreLayout
