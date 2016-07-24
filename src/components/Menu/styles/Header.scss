@@ -43,3 +43,31 @@
 .textLink {
   padding: 10px 0;
 }
+
+// ----------------------------------------------------------------------------
+// React css transitions
+// ----------------------------------------------------------------------------
+
+// Stagger fade in of .header's children
+.appear *, .enter * {
+  opacity: 0.01;
+}
+@for $i from 1 through 4 {
+  .appearActive .headerLink:nth-of-type(#{$i}),
+  .enterActive .headerLink:nth-of-type(#{$i}) {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out #{250*($i - 1)}ms;
+    * {
+      opacity: 1;
+    }
+  }
+}
+
+.leave {
+  opacity: 1;
+}
+
+.leaveActive {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}

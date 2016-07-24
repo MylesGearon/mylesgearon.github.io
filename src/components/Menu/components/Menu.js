@@ -1,7 +1,10 @@
 import React, { PropTypes as p } from 'react'
+import TransitionGroup from 'react-addons-css-transition-group'
 
-import Header from './Header.js'
-import Pulldown from './Pulldown.js'
+import Header from './Header'
+import headerClasses from '../styles/Header.scss'
+import Pulldown from './Pulldown'
+import pulldownClasses from '../styles/Pulldown.scss'
 
 const menuStyleBreakpoint = 700
 
@@ -38,11 +41,35 @@ export default class Menu extends React.Component {
   }
 
   render () {
+    let curMenu, classes
     if (this.props.currentMenuStyle === 'small') {
-      return <Header fade={this.props.animatingMenu} />
+      curMenu = <Header key='header' />
+      classes = headerClasses
+      transitions
+    } else if (this.props.currentMenuStyle === 'large') {
+      curMenu = <Pulldown key='pulldown' />
+      classes = pulldownClasses
     } else {
-      return <Pulldown fade={this.props.animatingMenu} />
+      return null
     }
+    const transitions = {
+      appear: classes.appear,
+      appearActive: classes.appearActive,
+      enter: classes.enter,
+      enterActive: classes.enterActive,
+      leave: classes.leave,
+      leaveActive: classes.leaveActive
+    }
+    return (
+      <TransitionGroup
+        transitionName={transitions}
+        transitionAppear
+        transitionAppearTimeout={1000}
+        transitionEnterTimeout={1000}
+        transitionLeaveTimeout={250}>
+        {curMenu}
+      </TransitionGroup>
+    )
   }
 
   // --------------------------------------------------------------------------
@@ -54,7 +81,7 @@ export default class Menu extends React.Component {
   }
 
   _setupResizeListener () {
-    // Create "window.throttledResize" event that fires per frame max
+    // Create "window.throttledResize" event that listens to resize and throttles it to fire once per frame at most
     // https://developer.mozilla.org/en-US/docs/Web/Events/resize#requestAnimationFrame_customEvent
     let running = false
     const throttleResize = () => {
@@ -72,9 +99,9 @@ export default class Menu extends React.Component {
 
   _handleResize () {
     if (this._getWindowWidth() > menuStyleBreakpoint) {
-      console.log('large menu')
+      if (this.props.currentMenuStyle === 'small') this.props.animateInMenu('large')
     } else {
-      console.log('small menu')
+      if (this.props.currentMenuStyle === 'large') this.props.animateInMenu('small')
     }
   }
 

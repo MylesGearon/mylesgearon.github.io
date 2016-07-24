@@ -44,7 +44,7 @@ const ACTION_HANDLERS = {
     return ({...state, animating: true, current: action.payload})
   },
   [ANIMATE_OUT_MENU]: state => {
-    return ({...state, animating: false})
+    return ({...state, animating: true})
   },
   [FINISH_ANIMATION]: state => {
     return ({
