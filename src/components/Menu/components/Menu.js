@@ -13,11 +13,7 @@ export default class Menu extends React.Component {
   static propTypes = {
     route: p.object.isRequired,
     currentMenuStyle: p.oneOfType([p.string, p.object]),
-    nextMenuStyle: p.oneOfType([p.string, p.object]),
-    animatingMenu: p.bool,
-    animateInMenu: p.func.isRequired,
-    animateOutMenu: p.func.isRequired,
-    finishAnimation: p.func.isRequired
+    animateInMenu: p.func.isRequired
   }
 
   // --------------------------------------------------------------------------
@@ -29,14 +25,8 @@ export default class Menu extends React.Component {
 
     if (this._getWindowWidth() > menuStyleBreakpoint) {
       this.props.animateInMenu('large')
-      setTimeout(() => {
-        this.props.finishAnimation()
-      }, 0)
     } else {
       this.props.animateInMenu('small')
-      setTimeout(() => {
-        this.props.finishAnimation()
-      }, 0)
     }
   }
 

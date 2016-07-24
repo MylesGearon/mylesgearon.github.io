@@ -3,8 +3,6 @@
 // ----------------------------------------------------------------------------
 
 export const ANIMATE_IN_MENU = 'ANIMATE_IN_MENU'
-export const ANIMATE_OUT_MENU = 'ANIMATE_OUT_MENU'
-export const FINISH_ANIMATION = 'FINISH_ANIMATION'
 
 // ----------------------------------------------------------------------------
 // Actions
@@ -17,22 +15,8 @@ export function animateInMenu (nextMenuSize) {
   }
 }
 
-export function animateOutMenu () {
-  return {
-    type: ANIMATE_OUT_MENU
-  }
-}
-
-export function finishAnimation () {
-  return {
-    type: FINISH_ANIMATION
-  }
-}
-
 export const actions = {
-  animateInMenu,
-  animateOutMenu,
-  finishAnimation
+  animateInMenu
 }
 
 // ----------------------------------------------------------------------------
@@ -41,17 +25,7 @@ export const actions = {
 
 const ACTION_HANDLERS = {
   [ANIMATE_IN_MENU]: (state, action) => {
-    return ({...state, animating: true, current: action.payload})
-  },
-  [ANIMATE_OUT_MENU]: state => {
-    return ({...state, animating: true})
-  },
-  [FINISH_ANIMATION]: state => {
-    return ({
-      ...state,
-      next: null,
-      animating: false
-    })
+    return ({...state, current: action.payload})
   }
 }
 
@@ -60,9 +34,7 @@ const ACTION_HANDLERS = {
 // ----------------------------------------------------------------------------
 
 const initialState = {
-  current: null,
-  next: null,
-  animating: false
+  current: null
 }
 
 export default function menuReducer (state = initialState, action) {
