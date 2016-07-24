@@ -1,10 +1,44 @@
-.appear, .enter {
-  opacity: 0.01;
+/* I don't know why I have to do this */
+@import '../../../styles/colors';
+
+.container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  background: $lightgray;
+  border: 1px solid $active-link-color;
 }
 
-.appearActive, .enterActive {
+.logo {
+  $height: 60px;
+  height: $height;
+  width: calc(#{$height}*7/6);
+  color: white;
+  stroke: white;
+
+  * {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// React css transitions
+// ----------------------------------------------------------------------------
+
+.appear, .enter {
+  opacity: 0;
+}
+
+.appearActive {
   opacity: 1;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 1s ease-in-out 0s;
+}
+
+.enterActive {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 1s;
 }
 
 .leave {
@@ -13,5 +47,5 @@
 
 .leaveActive {
   opacity: 0;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 250ms ease-in-out 0s;
 }

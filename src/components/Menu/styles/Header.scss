@@ -1,3 +1,6 @@
+/* I don't know why I have to do this */
+@import '../../../styles/colors';
+
 .header {
   height: 80px;
   width: 100%;
@@ -15,17 +18,17 @@
   with keyframes
 */
 .headerLink {
-  color: #AAAAAA;
-  stroke: #AAAAAA;
+  color: $inactive-link-color;
+  stroke: $inactive-link-color;
   text-decoration: none;
-  border: 1px solid rgba(#FFF, 0);
+  border: 1px solid rgba($active-link-color, 0);
 
   transition: all .5s;
 
   &.activeRoute, .activeRoute * {
     color: white;
-    stroke: #FFFFFF;
-    border-bottom: 1px solid white;
+    stroke: $active-link-color;
+    border-bottom: 1px solid $active-link-color;
   }
 }
 
@@ -50,13 +53,19 @@
 
 // Stagger fade in of .header's children
 .appear *, .enter * {
-  opacity: 0.01;
+  opacity: 0;
 }
 @for $i from 1 through 4 {
-  .appearActive .headerLink:nth-of-type(#{$i}),
-  .enterActive .headerLink:nth-of-type(#{$i}) {
+  .appearActive .headerLink:nth-of-type(#{$i}) {
     opacity: 1;
     transition: opacity 250ms ease-in-out #{250*($i - 1)}ms;
+    * {
+      opacity: 1;
+    }
+  }
+  .enterActive .headerLink:nth-of-type(#{$i}) {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out #{250*($i - 1) + 500}ms;
     * {
       opacity: 1;
     }
@@ -67,7 +76,12 @@
   opacity: 1;
 }
 
-.leaveActive {
-  opacity: 0;
-  transition: opacity 250ms ease-in-out;
+@for $i from 1 through 4 {
+  .leaveActive .headerLink:nth-of-type(#{$i}) {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out #{250*($i - 1)}ms;
+    * {
+      opacity: 0;
+    }
+  }
 }

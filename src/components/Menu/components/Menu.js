@@ -31,32 +31,36 @@ export default class Menu extends React.Component {
   }
 
   render () {
-    let curMenu, classes
+    let curMenu, classes, lastClasses, transitionProps
     if (this.props.currentMenuStyle === 'small') {
       curMenu = <Header key='header' />
       classes = headerClasses
-      transitions
+      lastClasses = pulldownClasses
     } else if (this.props.currentMenuStyle === 'large') {
       curMenu = <Pulldown key='pulldown' />
       classes = pulldownClasses
+      lastClasses = headerClasses
     } else {
       return null
     }
-    const transitions = {
-      appear: classes.appear,
-      appearActive: classes.appearActive,
-      enter: classes.enter,
-      enterActive: classes.enterActive,
-      leave: classes.leave,
-      leaveActive: classes.leaveActive
+    transitionProps = {
+      transitionName: {
+        appear: classes.appear,
+        appearActive: classes.appearActive,
+        enter: classes.enter,
+        enterActive: classes.enterActive,
+        // Use classes of last menu style, we just changed classes!
+        leave: lastClasses.leave,
+        leaveActive: lastClasses.leaveActive
+      },
+      transitionAppear: true,
+      transitionAppearTimeout: 1000,
+      transitionEnterTimeout: 2000,
+      transitionLeaveTimeout: lastClasses === pulldownClasses ? 500 : 1000
     }
     return (
       <TransitionGroup
-        transitionName={transitions}
-        transitionAppear
-        transitionAppearTimeout={1000}
-        transitionEnterTimeout={1000}
-        transitionLeaveTimeout={250}>
+        {...transitionProps}>
         {curMenu}
       </TransitionGroup>
     )
