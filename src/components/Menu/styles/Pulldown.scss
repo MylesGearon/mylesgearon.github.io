@@ -1,19 +1,20 @@
 /* I don't know why I have to do this */
-@import '../../../styles/colors';
+@import '../../../styles/colors.scss';
 
-.container {
+$margin: 20;
+$logo-height: 60;
+$logo-width: $logo-height*7/6;
+
+.logo {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: $margin + 0px;
+  left: $margin + 0px;
+  height: $logo-height + 0px;
+  width: $logo-width + 0px;
 
   background: $lightgray;
   border: 1px solid $active-link-color;
-}
 
-.logo {
-  $height: 60px;
-  height: $height;
-  width: calc(#{$height}*7/6);
   color: white;
   stroke: white;
 
@@ -21,6 +22,53 @@
     height: 100%;
     width: 100%;
   }
+}
+
+.linkContainer {
+  position: fixed;
+  height: 135px;
+  top: $margin*2 + $logo-height + 0px;
+  left: $margin + 0px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.link {
+  position: relative;
+
+  * {
+    transition: color ease-in-out 500ms;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 4px;
+    display: inline;
+    height: calc(100% - 3px);
+    width: 100%;
+    background: white;
+
+    transition: transform ease-in-out 500ms;
+    transform: rotateY(-90deg);
+  }
+
+  &.activeRoute {
+
+    * {
+      color: black;
+    }
+
+    &::before {
+      transform: none;
+    }
+  }
+
 }
 
 // ----------------------------------------------------------------------------

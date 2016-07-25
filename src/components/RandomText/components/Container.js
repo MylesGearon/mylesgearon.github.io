@@ -95,7 +95,7 @@ export default class TextContainer extends React.Component {
                   this.state.chars.length * i}
               ></Letter>
             )
-          })})
+          })}
         </div>
       )
     }
