@@ -1,0 +1,67 @@
+// Vars --------------------------------------------------------
+
+// Keep synced w/ js
+$numKeyframes: 20;
+
+$fadeRadius: 150;
+@function randomAbout0($domain) {
+	@return random(2*$domain) - $domain
+}
+
+.letter {
+	position: absolute;
+
+  font-family: "Inconsolata";
+  color: white;
+}
+
+// ----------------------------------------------------------------------------
+
+@for $i from 1 through $numKeyframes {
+	@keyframes fade-in-#{$i} {
+		from {
+			opacity: 0;
+			transform:
+				translate3d(
+					randomAbout0($fadeRadius) + 0px,
+					randomAbout0($fadeRadius) + 0px,
+					randomAbout0($fadeRadius) + 0px
+				)
+				rotate3d(
+					random(),
+					random(),
+					random(),
+					180deg
+				);
+			filter: blur(5px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+			filter: unset;
+		}
+	}
+	@keyframes fade-out-#{$i} {
+		from {
+			opacity: 1;
+			transform: none;
+			filter: unset;
+		}
+		to {
+			opacity: 0;
+			transform:
+				translate3d(
+					randomAbout0($fadeRadius) + 0px,
+					randomAbout0($fadeRadius) + 0px,
+					randomAbout0($fadeRadius) + 0px
+				)
+				rotate3d(
+					random(),
+					random(),
+					random(),
+					180deg
+				);
+			filter: blur(5px);
+		}
+	}
+}
