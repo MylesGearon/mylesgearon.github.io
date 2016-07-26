@@ -8,7 +8,16 @@ import classes from '../styles/Pulldown.scss'
 import EmbeddingLogo from '../assets/embeddingLogo.svg'
 import FallbackLogo from '../assets/logo.svg'
 
+const p = React.PropTypes
+
 export default class Pulldown extends React.Component {
+
+  static propTypes = {
+    expandMenu: p.func.isRequired,
+    closeMenu: p.func.isRequired,
+    expanded: p.bool.isRequired
+  }
+
   render () {
     const fontHeight = 22
     const links = [
@@ -30,10 +39,11 @@ export default class Pulldown extends React.Component {
       }
     ]
     return (
-      <div>
+      <div
+        onClick={this._toggleMenu.bind(this)}>
         <Isvg
           src={EmbeddingLogo}
-          wrapper={React.DOM.div}
+          wrapper={React.DOM.div.bin}
           className={classes.logo}>
           {/* Fallback link */}
           <img
@@ -41,7 +51,7 @@ export default class Pulldown extends React.Component {
             src={FallbackLogo} />
         </Isvg>
         <div
-          className={classes.linkContainer}
+          className={classes.linkContainer + (this.props.expanded ? ' ' + classes.active : '')}
           style={{
             width: links.reduce((a, b) => a.text.length > b.text.length ? a : b).text.length * fontHeight / 2
           }}>
@@ -50,19 +60,29 @@ export default class Pulldown extends React.Component {
               to={link.type === IndexLink ? '/' : `/${link.text.toLowerCase()}`}
               key={ind}
               style={{width: link.text.length * fontHeight / 2}}
-              className={classes.link}
+              className={classes.link + (this.props.expanded ? ' ' + classes.active : '')}
               activeClassName={classes.activeRoute}>
               <RandomText
                 text={link.text}
                 fontHeight={fontHeight}
-                width={link.text.length * fontHeight}
+                width={link.text.length * fontHeight / 2}
                 animationSpeed={1000}
                 animationDuration={2000}
-                animate='in' />
+                animate={this.props.expanded ? 'in' : 'out'} />
             </link.type>
           ))}
         </div>
       </div>
     )
+  }
+
+  _toggleMenu (e) {
+    if (e.target instanceof SVGElement) {
+      if (this.props.expanded) {
+        this.props.closeMenu()
+      } else {
+        this.props.expandMenu()
+      }
+    }
   }
 }

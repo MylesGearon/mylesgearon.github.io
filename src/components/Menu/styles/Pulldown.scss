@@ -12,6 +12,8 @@ $logo-width: $logo-height*7/6;
   height: $logo-height + 0px;
   width: $logo-width + 0px;
 
+  cursor: pointer;
+
   background: $lightgray;
   border: 1px solid $active-link-color;
 
@@ -30,11 +32,19 @@ $logo-width: $logo-height*7/6;
   top: $margin*2 + $logo-height + 0px;
   left: $margin + 0px;
 
-  overflow: hidden;
+  // overflow: hidden;
 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  visibility: hidden;
+  transition: visibility 0s 3s;
+
+  &.active {
+    visibility: visible;
+    transition: visibility 0s 0s;
+  }
 }
 
 .link {
@@ -58,7 +68,7 @@ $logo-width: $logo-height*7/6;
     transform: rotateY(-90deg);
   }
 
-  &.activeRoute {
+  &.activeRoute.active {
 
     * {
       color: black;

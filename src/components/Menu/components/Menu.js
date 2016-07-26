@@ -37,7 +37,7 @@ export default class Menu extends React.Component {
       classes = headerClasses
       lastClasses = pulldownClasses
     } else if (this.props.currentMenuStyle === 'large') {
-      curMenu = <Pulldown key='pulldown' />
+      curMenu = <Pulldown key='pulldown' {...this.props} />
       classes = pulldownClasses
       lastClasses = headerClasses
     } else {

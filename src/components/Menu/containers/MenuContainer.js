@@ -6,8 +6,7 @@ import Menu from '../components/Menu'
 const mapStateToProps = state => {
   return ({
     currentMenuStyle: state.menu.current,
-    nextMenuStyle: state.menu.next,
-    animatingMenu: state.menu.animating
+    expanded: state.menu.expanded
   })
 }
 
