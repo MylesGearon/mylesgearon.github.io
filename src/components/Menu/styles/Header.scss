@@ -1,8 +1,9 @@
 /* I don't know why I have to do this */
 @import '../../../styles/colors.scss';
+$header-height: 70px;
 
 .header {
-  height: 80px;
+  height: $header-height;
   width: 100%;
 
   display: flex;

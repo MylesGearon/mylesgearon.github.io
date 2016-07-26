@@ -8,6 +8,10 @@ $fadeRadius: 150;
 	@return random(2*$domain) - $domain
 }
 
+.container {
+  position: relative;
+}
+
 .letter {
 	position: absolute;
 

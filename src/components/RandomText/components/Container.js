@@ -2,6 +2,7 @@ import React from 'react'
 const p = React.PropTypes
 
 import Letter from './Letter'
+import classes from '../randomText.scss'
 
 export default class TextContainer extends React.Component {
 
@@ -74,6 +75,7 @@ export default class TextContainer extends React.Component {
     } else {
       return (
         <div
+          className={classes.container}
           style={{
             height: this.state.numRows * this.props.fontHeight,
             width: this.props.width

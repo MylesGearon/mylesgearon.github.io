@@ -1,5 +1,5 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+@import '../../../components/Menu/styles/Header.scss';
+
+.container {
+  transform: translateY(-#{$header-height/2});
 }
