@@ -63,6 +63,22 @@ webpackConfig.plugins = [
   })
 ]
 
+// Generate index.html for each route
+config.routes.forEach(route => {
+  webpackConfig.plugins.push(
+    new HtmlWebpackPlugin({
+      template: paths.client('index.ejs'),
+      hash: false,
+      favicon: paths.client('static/favicon.ico'),
+      filename: route + '/index.html',
+      inject: 'body',
+      minify: {
+        collapseWhitespace: true
+      }
+    })
+  )
+})
+
 if (__DEV__) {
   debug('Enable plugins for live development (HMR, NoErrors).')
   webpackConfig.plugins.push(
