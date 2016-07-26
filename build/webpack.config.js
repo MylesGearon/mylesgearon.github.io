@@ -60,6 +60,14 @@ webpackConfig.plugins = [
     minify: {
       collapseWhitespace: true
     }
+  }),
+  new HtmlWebpackPlugin({
+    template: paths.client('404.html'),
+    favicon: paths.client('static/favicon.ico'),
+    filename: '404.html',
+    minify: {
+      collapseWhitespace: true
+    }
   })
 ]
 
