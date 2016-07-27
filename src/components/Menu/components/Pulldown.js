@@ -18,6 +18,19 @@ export default class Pulldown extends React.Component {
     expanded: p.bool.isRequired
   }
 
+  constructor () {
+    super()
+    this.state = {
+      animating: false
+    }
+    this.animationDuration = 2000
+    this.timeouts = []
+  }
+
+  componentWillUnmount () {
+    this.timeouts.forEach(timeout => clearTimeout(timeout))
+  }
+
   render () {
     const fontHeight = 22
     const links = [
@@ -67,7 +80,7 @@ export default class Pulldown extends React.Component {
                 fontHeight={fontHeight}
                 width={link.text.length * fontHeight / 2}
                 animationSpeed={1000}
-                animationDuration={2000}
+                animationDuration={this.animationDuration}
                 animate={this.props.expanded ? 'in' : 'out'} />
             </link.type>
           ))}
@@ -77,12 +90,14 @@ export default class Pulldown extends React.Component {
   }
 
   _toggleMenu (e) {
-    if (e.target instanceof SVGElement) {
+    if (e.target instanceof SVGElement && !this.state.animating) {
       if (this.props.expanded) {
         this.props.closeMenu()
       } else {
         this.props.expandMenu()
       }
+      this.setState({animating: true})
+      this.timeouts.push(setTimeout(() => this.setState({animating: false}), this.animationDuration))
     }
   }
 }
