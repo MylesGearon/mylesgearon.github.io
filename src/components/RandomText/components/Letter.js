@@ -45,7 +45,8 @@ export default class Letter extends React.Component {
       nextState.fade !== this.state.fade ||
       nextState.show !== this.state.show ||
       nextProps.x !== this.props.x ||
-      nextProps.y !== this.props.y
+      nextProps.y !== this.props.y ||
+      nextProps.fontHeight !== this.props.fontHeight
     )
   }
 
