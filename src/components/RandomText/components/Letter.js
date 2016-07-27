@@ -23,6 +23,7 @@ export default class Letter extends React.Component {
       show: false,
       animate: true
     }
+    this.timeouts = []
   }
 
   componentDidMount () {
@@ -48,26 +49,30 @@ export default class Letter extends React.Component {
     )
   }
 
+  componentWillUnmount () {
+    this.timeouts.forEach(timeout => clearTimeout(timeout))
+  }
+
   // render component and animate in
   _fadeIn () {
-    setTimeout(() => {
-      this.setState({
+    this.timeouts.push(setTimeout(() => {
+      this.timeouts.push(this.setState({
         fade: 'in',
         show: true
-      })
+      }))
       // Disable animation after fade in
-      setTimeout(() => this.setState({animate: false}), this.animationSpeed)
-    }, this.props.animationStart + Math.random() * this.props.animationSpeed * this.props.animationRandomness)
+      this.timeouts.push(setTimeout(() => this.setState({animate: false}), this.animationSpeed))
+    }, this.props.animationStart + Math.random() * this.props.animationSpeed * this.props.animationRandomness))
   }
 
   // animate out then stop rendering
   _fadeOut () {
-    setTimeout(() => {
+    this.timeouts.push(setTimeout(() => {
       this.setState({fade: 'out', animate: true})
-      setTimeout(() => {
+      this.timeouts.push(setTimeout(() => {
         this.setState({ show: false })
-      }, this.props.animationSpeed)
-    }, this.props.animationStart + Math.random() * this.props.animationSpeed * this.props.animationRandomness)
+      }, this.props.animationSpeed))
+    }, this.props.animationStart + Math.random() * this.props.animationSpeed * this.props.animationRandomness))
   }
 
   render () {
