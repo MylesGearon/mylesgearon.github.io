@@ -44,7 +44,8 @@ const ACTION_HANDLERS = {
     return ({
       ...state,
       current: action.payload,
-      expanded: false
+      expanded: false,
+      visible: true
     })
   },
   [EXPAND_MENU]: state => {
@@ -66,6 +67,7 @@ const ACTION_HANDLERS = {
 // ----------------------------------------------------------------------------
 
 const initialState = {
+  visible: window.location.pathname !== '/',
   current: null,
   expanded: false
 }

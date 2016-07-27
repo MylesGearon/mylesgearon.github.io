@@ -11,7 +11,7 @@ export default class Menu extends React.Component {
   static propTypes = {
     route: p.object.isRequired,
     breakpoint: p.array.isRequired,
-    animateInMenu: p.func.isRequired,
+    visible: p.bool.isRequired,
     expanded: p.bool.isRequired,
     expandMenu: p.func.isRequired,
     closeMenu: p.func.isRequired
@@ -40,6 +40,9 @@ export default class Menu extends React.Component {
 
   render () {
     let curMenu, classes, lastClasses, transitionProps
+    if (!this.props.visible) {
+      return null
+    }
     if (this.state.menuStyle === 'small') {
       curMenu = <Header key='header' />
       classes = headerClasses
@@ -51,8 +54,6 @@ export default class Menu extends React.Component {
         closeMenu={this.props.closeMenu} />
       classes = pulldownClasses
       lastClasses = headerClasses
-    } else {
-      return null
     }
 
     transitionProps = {

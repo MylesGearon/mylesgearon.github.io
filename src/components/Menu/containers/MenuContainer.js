@@ -5,6 +5,7 @@ import Menu from '../components/Menu'
 
 const mapStateToProps = state => {
   return ({
+    visible: state.menu.visible,
     currentMenuStyle: state.menu.current,
     expanded: state.menu.expanded,
     breakpoint: state.breakpoint.current === null ? null : state.breakpoint.ranges[state.breakpoint.current]

@@ -1,10 +1,17 @@
 import React from 'react'
 import RandomText from '../../../components/RandomText'
-// import Perf from 'react-addons-perf'
 
 import classes from './HomeView.scss'
 
+const firstAnimationDuration = 2000
+const animationPause = 700
+const secondAnimationDuration = 2500
+
 export default class HomeView extends React.Component {
+
+  static propTypes = {
+    animateInMenu: React.PropTypes.func.isRequired
+  }
 
   constructor () {
     super()
@@ -16,18 +23,18 @@ export default class HomeView extends React.Component {
   }
 
   componentDidMount () {
-    // Perf.start()
+    // Animate in subtext
     this.timeouts.push(setTimeout(() => {
       this.setState({animateDescription: 'in'})
-    }, 3200))
-    // setTimeout(() => {
-    //   Perf.stop()
-    //   Perf.printInclusive()
-    //   Perf.printWasted()
-    // }, 6000)
+    }, firstAnimationDuration + animationPause))
+    // Animate inmenu
+    this.timeouts.push(setTimeout(() => {
+      this.props.animateInMenu()
+    }, firstAnimationDuration + secondAnimationDuration + animationPause + 500))
   }
 
   componentWillUnmount () {
+    this.props.animateInMenu()
     this.timeouts.forEach(timeout => clearTimeout(timeout))
   }
 
@@ -43,7 +50,7 @@ export default class HomeView extends React.Component {
           width={180}
           fontHeight={50}
           animationSpeed={1000}
-          animationDuration={2500}
+          animationDuration={firstAnimationDuration}
           animate='in' />
         <br />
         <RandomText
@@ -52,7 +59,7 @@ export default class HomeView extends React.Component {
           fontHeight={18}
           animationSpeed={400}
           animationRandomness={0}
-          animationDuration={2500}
+          animationDuration={secondAnimationDuration}
           animate={this.state.animateDescription} />
       </div>
     )
