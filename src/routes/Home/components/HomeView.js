@@ -1,5 +1,6 @@
 import React from 'react'
 import RandomText from '../../../components/RandomText'
+// import Perf from 'react-addons-perf'
 
 import classes from './HomeView.scss'
 
@@ -15,13 +16,23 @@ export default class HomeView extends React.Component {
   }
 
   componentDidMount () {
+    // Perf.start()
     this.timeouts.push(setTimeout(() => {
       this.setState({animateDescription: 'in'})
-    }, 3000))
+    }, 3200))
+    // setTimeout(() => {
+    //   Perf.stop()
+    //   Perf.printInclusive()
+    //   Perf.printWasted()
+    // }, 6000)
   }
 
   componentWillUnmount () {
     this.timeouts.forEach(timeout => clearTimeout(timeout))
+  }
+
+  shouldComponentUpdate (nextProps, nextState) {
+    return nextState.animateDescription !== this.state.animateDescription
   }
 
   render () {
