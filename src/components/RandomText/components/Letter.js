@@ -20,7 +20,8 @@ export default class Letter extends React.Component {
   constructor () {
     super()
     this.state = {
-      show: false
+      show: false,
+      animate: true
     }
   }
 
@@ -39,7 +40,12 @@ export default class Letter extends React.Component {
   }
 
   shouldComponentUpdate (nextProps, nextState) {
-    return nextState.fade !== this.state.fade || nextState.show !== this.state.show
+    return (
+      nextState.fade !== this.state.fade ||
+      nextState.show !== this.state.show ||
+      nextProps.x !== this.props.x ||
+      nextProps.y !== this.props.y
+    )
   }
 
   // render component and animate in
@@ -49,13 +55,15 @@ export default class Letter extends React.Component {
         fade: 'in',
         show: true
       })
+      // Disable animation after fade in
+      setTimeout(() => this.setState({animate: false}), this.animationSpeed)
     }, this.props.animationStart + Math.random() * this.props.animationSpeed * this.props.animationRandomness)
   }
 
   // animate out then stop rendering
   _fadeOut () {
     setTimeout(() => {
-      this.setState({fade: 'out'})
+      this.setState({fade: 'out', animate: true})
       setTimeout(() => {
         this.setState({ show: false })
       }, this.props.animationSpeed)
@@ -67,6 +75,7 @@ export default class Letter extends React.Component {
       return null
     }
     const keyframe = Math.floor(Math.random() * this.props.numKeyframes + 1)
+    const easingFunction = 'cubic-bezier(.85,0,.54,1)'
     return (
       <div
         className={classes.letter}
@@ -76,10 +85,18 @@ export default class Letter extends React.Component {
           width: this.props.fontHeight / 2,
           left: this.props.x,
           top: this.props.y,
-          animation: `
-            ${classes['fade-' + this.state.fade + '-' + keyframe]}
-            cubic-bezier(.85,0,.54,1)
-            ${this.props.animationSpeed}ms forwards`
+          transition: `
+            top 1s ${easingFunction},
+            left 1s ${easingFunction},
+            font-size 1s ${easingFunction}
+          `,
+          animation: this.state.animate
+            ? `
+              ${classes['fade-' + this.state.fade + '-' + keyframe]}
+              ${easingFunction}
+              ${this.props.animationSpeed}ms forwards
+            `
+            : null
         }}
         >{this.props.char}</div>
     )

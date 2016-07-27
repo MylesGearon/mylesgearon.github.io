@@ -24,25 +24,44 @@ export default class TextContainer extends React.Component {
     super()
     this.state = {
       numRows: null,
-      chars: null
+      chars: null,
+      updated: false
     }
   }
 
   componentDidMount () {
-    this.setState(this._mapCharPositions(this.props.text))
+    this.setState(this._mapCharPositions(this.props))
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.fontHeight !== this.props.fontHeight || nextProps.width !== this.props.width) {
+      this.setState(this._mapCharPositions(nextProps))
+    }
   }
 
   shouldComponentUpdate (nextProps, nextState) {
-    return nextProps.animate !== this.props.animate || this.state.numRows === null
+    if (this.state.updated) {
+      this.setState({updated: false})
+      return true
+    }
+    return (
+      nextProps.animate !== this.props.animate ||
+      this.state.chars === null
+    )
   }
 
+  // componentDidUpdate () {
+  //   this.setState({updated: false})
+  // }
+
   // returns an array of chars w/ form [x, y, char]
-  _mapCharPositions (text) {
-    const fontWidth = this.props.fontHeight / 2
-    const charsPerRow = Math.floor(this.props.width / fontWidth)
-    const emptySpaceInRow = this.props.width - charsPerRow * fontWidth
+  _mapCharPositions (props) {
+    const fontWidth = props.fontHeight / 2
+    const charsPerRow = Math.floor(props.width / fontWidth)
+    const emptySpaceInRow = props.width - charsPerRow * fontWidth
     const margin = emptySpaceInRow / (charsPerRow + 1)
     const chars = []
+    let text = props.text
 
     let textLength = text.length
     for (let i = 0; i < textLength; i++) {
@@ -60,13 +79,13 @@ export default class TextContainer extends React.Component {
       } else {
         chars.push([
           col * fontWidth + margin * (col + 1),
-          Math.floor(i / charsPerRow) * this.props.fontHeight,
+          Math.floor(i / charsPerRow) * props.fontHeight,
           text[i]
         ])
       }
     }
     const numRows = Math.ceil(textLength / charsPerRow)
-    return {numRows, chars}
+    return {numRows, chars, updated: true}
   }
 
   render () {
@@ -78,7 +97,8 @@ export default class TextContainer extends React.Component {
           className={classes.container}
           style={{
             height: this.state.numRows * this.props.fontHeight,
-            width: this.props.width
+            width: this.props.width,
+            transition: 'width ease-in-out 1s'
           }}>
           {this.state.chars.map((char, i) => {
             return (
