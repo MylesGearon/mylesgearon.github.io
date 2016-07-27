@@ -6,9 +6,9 @@ import Menu from '../components/Menu'
 const mapStateToProps = state => {
   return ({
     currentMenuStyle: state.menu.current,
-    expanded: state.menu.expanded
+    expanded: state.menu.expanded,
+    breakpoint: state.breakpoint.current === null ? null : state.breakpoint.ranges[state.breakpoint.current]
   })
 }
 
-const mapDispatchToProps = actions
-export default connect(mapStateToProps, mapDispatchToProps)(Menu)
+export default connect(mapStateToProps, actions)(Menu)

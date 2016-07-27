@@ -1,5 +1,5 @@
 // We only need to import the modules necessary for initial render
-import CoreLayout from '../layouts/CoreLayout/CoreLayout'
+import CoreLayout from '../layouts/CoreLayout'
 import Home from './Home'
 
 /*  Note: Instead of using JSX, we recommend using react-router

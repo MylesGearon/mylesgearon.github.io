@@ -2,37 +2,21 @@
 // Constants
 // ----------------------------------------------------------------------------
 
-export const ANIMATE_IN_MENU = 'ANIMATE_IN_MENU'
-export const EXPAND_MENU = 'EXPAND_MENU'
-export const CLOSE_MENU = 'CLOSE_MENU'
+export const UPDATE_BREAKPOINT = 'UPDATE_BREAKPOINT'
 
 // ----------------------------------------------------------------------------
 // Actions
 // ----------------------------------------------------------------------------
 
-export function animateInMenu (nextMenuSize) {
+export function updateBreakpoint (currentWidth) {
   return {
-    type: ANIMATE_IN_MENU,
-    payload: nextMenuSize
-  }
-}
-
-export function expandMenu () {
-  return {
-    type: EXPAND_MENU
-  }
-}
-
-export function closeMenu () {
-  return {
-    type: CLOSE_MENU
+    type: UPDATE_BREAKPOINT,
+    payload: currentWidth
   }
 }
 
 export const actions = {
-  animateInMenu,
-  expandMenu,
-  closeMenu
+  updateBreakpoint
 }
 
 // ----------------------------------------------------------------------------
@@ -40,23 +24,17 @@ export const actions = {
 // ----------------------------------------------------------------------------
 
 const ACTION_HANDLERS = {
-  [ANIMATE_IN_MENU]: (state, action) => {
+  [UPDATE_BREAKPOINT]: (state, action) => {
+    let rangeInd = 0
+    while (true) {
+      if (state.ranges[rangeInd][0] <= action.payload && state.ranges[rangeInd][1] > action.payload) {
+        break
+      }
+      rangeInd++
+    }
     return ({
       ...state,
-      current: action.payload,
-      expanded: false
-    })
-  },
-  [EXPAND_MENU]: state => {
-    return ({
-      ...state,
-      expanded: true
-    })
-  },
-  [CLOSE_MENU]: state => {
-    return ({
-      ...state,
-      expanded: false
+      current: rangeInd
     })
   }
 }
@@ -66,11 +44,11 @@ const ACTION_HANDLERS = {
 // ----------------------------------------------------------------------------
 
 const initialState = {
-  current: null,
-  expanded: false
+  ranges: [[0, 700], [701, Infinity]],
+  current: null
 }
 
-export default function menuReducer (state = initialState, action) {
+export default function breakpointReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 
   return handler ? handler(state, action) : state
