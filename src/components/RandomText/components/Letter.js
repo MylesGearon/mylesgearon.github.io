@@ -33,10 +33,12 @@ export default class Letter extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.animate === 'in') {
-      this._fadeIn()
-    } else {
-      this._fadeOut()
+    if (nextProps.animate !== this.props.animate) {
+      if (nextProps.animate === 'in') {
+        this._fadeIn()
+      } else {
+        this._fadeOut()
+      }
     }
   }
 
