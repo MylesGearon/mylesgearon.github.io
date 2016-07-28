@@ -19,7 +19,6 @@
     "test": "better-npm-run test",
     "test:dev": "npm run test -- --watch",
     "deploy": "better-npm-run deploy",
-    "deploy:dev": "better-npm-run deploy:dev",
     "deploy:prod": "better-npm-run deploy:prod",
     "codecov": "cat coverage/*/lcov.info | codecov",
     "pushdist": "cd dist && git add --all && git commit -m \"Release at $(date)\" && git push"
@@ -41,18 +40,12 @@
     "deploy": {
       "command": "npm run clean && npm run compile",
       "env": {
-        "DEBUG": "app:*"
-      }
-    },
-    "deploy:dev": {
-      "command": "npm run deploy",
-      "env": {
-        "NODE_ENV": "development",
+        "NODE_ENV": "production",
         "DEBUG": "app:*"
       }
     },
     "deploy:prod": {
-      "command": "npm run deploy",
+      "command": "npm run deploy && npm run pushdist",
       "env": {
         "NODE_ENV": "production",
         "DEBUG": "app:*"
