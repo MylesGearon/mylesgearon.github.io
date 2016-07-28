@@ -14,9 +14,20 @@ export default class CoreLayout extends React.Component {
     updateBreakpoint: p.func.isRequired
   }
 
+  constructor () {
+    super()
+    this.eventListeners = []
+  }
+
   componentWillMount () {
     this._handleResize()
     this._setupResizeListener()
+  }
+
+  componentWillUnmount () {
+    this.eventListeners.forEach(eventListener => {
+      window.removeEventListener(eventListener[0], eventListener[1])
+    })
   }
 
   render () {
@@ -48,7 +59,9 @@ export default class CoreLayout extends React.Component {
       }
     }
     window.addEventListener('resize', throttleResize)
+    this.eventListeners.push(['resize', throttleResize])
     window.addEventListener('throttledResize', this._handleResize.bind(this))
+    this.eventListeners.push(['throttledResize', this._handleResize.bind(this)])
   }
 
   _handleResize () {
