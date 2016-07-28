@@ -1,5 +1,15 @@
-@import '../../../components/Menu/styles/Header.scss';
+@import '../../../styles/breakpoints.scss';
 
 .container {
-  transform: translateY(-#{$header-height/2});
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform .5s;
+}
+
+@media screen and (min-width: $breakpoint-5) {
+  .container {
+    transform: translate(-50%, -100%);
+  }
 }

@@ -7,11 +7,14 @@ const firstAnimationDuration = 2000
 const animationPause = 700
 const secondAnimationDuration = 2500
 
+const p = React.PropTypes
+
 export default class HomeView extends React.Component {
 
   static propTypes = {
-    menuVisible: React.PropTypes.bool.isRequired,
-    animateInMenu: React.PropTypes.func.isRequired
+    menuVisible: p.bool.isRequired,
+    curBreakpoint: p.oneOfType([p.number, p.object]).isRequired,
+    animateInMenu: p.func.isRequired
   }
 
   constructor () {
@@ -21,6 +24,68 @@ export default class HomeView extends React.Component {
     }
 
     this.timeouts = []
+    this.sizesByBreakpoint = {
+      0: {
+        title: {
+          width: 180,
+          fontHeight: 50
+        },
+        subtitle: {
+          width: 170,
+          fontHeight: 18
+        }
+      },
+      1: {
+        title: {
+          width: 210,
+          fontHeight: 55
+        },
+        subtitle: {
+          width: 170,
+          fontHeight: 18
+        }
+      },
+      2: {
+        title: {
+          width: 400,
+          fontHeight: 60
+        },
+        subtitle: {
+          width: 290,
+          fontHeight: 18
+        }
+      },
+      3: {
+        title: {
+          width: 400,
+          fontHeight: 60
+        },
+        subtitle: {
+          width: 310,
+          fontHeight: 20
+        }
+      },
+      4: {
+        title: {
+          width: 400,
+          fontHeight: 60
+        },
+        subtitle: {
+          width: 310,
+          fontHeight: 20
+        }
+      },
+      5: {
+        title: {
+          width: 430,
+          fontHeight: 65
+        },
+        subtitle: {
+          width: 500,
+          fontHeight: 22
+        }
+      }
+    }
   }
 
   componentDidMount () {
@@ -40,24 +105,29 @@ export default class HomeView extends React.Component {
   }
 
   shouldComponentUpdate (nextProps, nextState) {
-    return nextState.animateDescription !== this.state.animateDescription
+    return (
+      nextState.animateDescription !== this.state.animateDescription ||
+      nextProps.curBreakpoint !== this.props.curBreakpoint
+    )
   }
 
   render () {
+    const titleSizes = this.sizesByBreakpoint[this.props.curBreakpoint].title
+    const subtitleSizes = this.sizesByBreakpoint[this.props.curBreakpoint].subtitle
     return (
       <div className={classes.container}>
         <RandomText
           text="Hi, I'm Myles"
-          width={180}
-          fontHeight={50}
+          width={titleSizes.width}
+          fontHeight={titleSizes.fontHeight}
           animationSpeed={1000}
           animationDuration={firstAnimationDuration}
           animate='in' />
         <br />
         <RandomText
           text="I'm a self-taught web developer from Chicago."
-          width={170}
-          fontHeight={18}
+          width={subtitleSizes.width}
+          fontHeight={subtitleSizes.fontHeight}
           animationSpeed={400}
           animationRandomness={0}
           animationDuration={secondAnimationDuration}

@@ -5,6 +5,7 @@ import HomeView from '../components/HomeView'
 
 const mapStateToProps = state => {
   return ({
+    curBreakpoint: state.breakpoint.current,
     menuVisible: state.menu.visible
   })
 }

@@ -27,7 +27,7 @@ const ACTION_HANDLERS = {
   [UPDATE_BREAKPOINT]: (state, action) => {
     let rangeInd = 0
     while (true) {
-      if (state.ranges[rangeInd][0] <= action.payload && state.ranges[rangeInd][1] > action.payload) {
+      if (state.ranges[rangeInd][0] <= action.payload && state.ranges[rangeInd][1] >= action.payload) {
         break
       }
       rangeInd++
@@ -44,7 +44,7 @@ const ACTION_HANDLERS = {
 // ----------------------------------------------------------------------------
 
 const initialState = {
-  ranges: [[0, 700], [701, Infinity]],
+  ranges: [[0, 400], [401, 700], [701, 1000], [1001, 1365], [1366, 1919], [1920, Infinity]],
   current: null
 }
 

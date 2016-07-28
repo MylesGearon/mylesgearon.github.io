@@ -98,7 +98,7 @@ export default class TextContainer extends React.Component {
           style={{
             height: this.state.numRows * this.props.fontHeight,
             width: this.props.width,
-            transition: 'width ease-in-out 1s'
+            transition: 'height cubic-bezier(.64,.23,.29,1.37) .8s, width cubic-bezier(.64,.23,.29,1.37) .8s'
           }}>
           {this.state.chars.map((char, i) => {
             return (
