@@ -3,4 +3,10 @@ import { actions } from '../../../components/Menu/modules/menu'
 
 import HomeView from '../components/HomeView'
 
-export default connect(state => state, {animateInMenu: actions.animateInMenu})(HomeView)
+const mapStateToProps = state => {
+  return ({
+    menuVisible: state.menu.visible
+  })
+}
+
+export default connect(mapStateToProps, {animateInMenu: actions.animateInMenu})(HomeView)

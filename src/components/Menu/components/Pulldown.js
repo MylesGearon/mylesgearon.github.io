@@ -56,7 +56,7 @@ export default class Pulldown extends React.Component {
         onClick={this._toggleMenu.bind(this)}>
         <Isvg
           src={EmbeddingLogo}
-          wrapper={React.DOM.div.bin}
+          wrapper={React.DOM.div}
           className={classes.logo}>
           {/* Fallback link */}
           <img
@@ -90,7 +90,7 @@ export default class Pulldown extends React.Component {
   }
 
   _toggleMenu (e) {
-    if (e.target instanceof SVGElement && !this.state.animating) {
+    if (e.target.tagName === 'svg' && !this.state.animating) {
       if (this.props.expanded) {
         this.props.closeMenu()
       } else {

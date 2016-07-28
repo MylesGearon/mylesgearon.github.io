@@ -10,6 +10,7 @@ const secondAnimationDuration = 2500
 export default class HomeView extends React.Component {
 
   static propTypes = {
+    menuVisible: React.PropTypes.bool.isRequired,
     animateInMenu: React.PropTypes.func.isRequired
   }
 
@@ -29,12 +30,12 @@ export default class HomeView extends React.Component {
     }, firstAnimationDuration + animationPause))
     // Animate inmenu
     this.timeouts.push(setTimeout(() => {
-      this.props.animateInMenu()
+      if (!this.props.menuVisible) this.props.animateInMenu()
     }, firstAnimationDuration + secondAnimationDuration + animationPause + 500))
   }
 
   componentWillUnmount () {
-    this.props.animateInMenu()
+    if (!this.props.menuVisible) this.props.animateInMenu()
     this.timeouts.forEach(timeout => clearTimeout(timeout))
   }
 

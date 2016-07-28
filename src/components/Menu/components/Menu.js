@@ -25,7 +25,7 @@ export default class Menu extends React.Component {
   }
 
   componentWillMount () {
-    this.setState({menuStyle: this._getMenuStyle(this.props.breakpoint)})
+    this.setState({menuStyle: this._getMenuStyle(this.props.breakpoint || [0, 700])})
   }
 
   componentWillReceiveProps (nextProps) {

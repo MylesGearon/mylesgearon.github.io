@@ -44,7 +44,6 @@ const ACTION_HANDLERS = {
     return ({
       ...state,
       current: action.payload,
-      expanded: false,
       visible: true
     })
   },
