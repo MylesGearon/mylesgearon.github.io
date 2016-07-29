@@ -1,4 +1,6 @@
 import React from 'react'
+
+import View from '../../../components/ViewWrapper'
 import RandomText from '../../../components/RandomText'
 
 import classes from '../HomeView.scss'
@@ -115,29 +117,26 @@ export default class HomeView extends React.Component {
     const titleSizes = this.sizesByBreakpoint[this.props.curBreakpoint].title
     const subtitleSizes = this.sizesByBreakpoint[this.props.curBreakpoint].subtitle
     return (
-      <div>
-        <div className={classes.viewBackground} />
-        <main className={classes.mainContainer}>
-          <div className={classes.textContainer}>
-            <RandomText
-              text="Hi, I'm Myles"
-              width={titleSizes.width}
-              fontHeight={titleSizes.fontHeight}
-              animationSpeed={1000}
-              animationDuration={firstAnimationDuration}
-              animate='in' />
-            <br />
-            <RandomText
-              text="I'm a self-taught web developer from Chicago."
-              width={subtitleSizes.width}
-              fontHeight={subtitleSizes.fontHeight}
-              animationSpeed={400}
-              animationRandomness={0}
-              animationDuration={secondAnimationDuration}
-              animate={this.state.animateDescription} />
-          </div>
-        </main>
-      </div>
+      <View>
+        <div className={classes.textContainer}>
+          <RandomText
+            text="Hi, I'm Myles"
+            width={titleSizes.width}
+            fontHeight={titleSizes.fontHeight}
+            animationSpeed={1000}
+            animationDuration={firstAnimationDuration}
+            animate='in' />
+          <br />
+          <RandomText
+            text="I'm a self-taught web developer from Chicago."
+            width={subtitleSizes.width}
+            fontHeight={subtitleSizes.fontHeight}
+            animationSpeed={400}
+            animationRandomness={0}
+            animationDuration={secondAnimationDuration}
+            animate={this.state.animateDescription} />
+        </div>
+      </View>
     )
   }
 }

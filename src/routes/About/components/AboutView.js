@@ -1,7 +1,14 @@
 import React from 'react'
 
-export const AboutView = () => (
-  <h4>About</h4>
-)
+import View from '../../../components/ViewWrapper'
 
-export default AboutView
+export default class AboutView extends React.Component {
+
+  render () {
+    return (
+      <View>
+        Hello world!
+      </View>
+    )
+  }
+}
