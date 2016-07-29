@@ -1,4 +1,5 @@
 @import '../../components/Menu/styles/Header.scss';
+@import '../../components/Menu/styles/Pulldown.scss';
 
 .container {
   min-height: 100%;
@@ -12,12 +13,15 @@
   height: calc(100% - #{$header-height});
   width: 100%;
 
-  transition: top .5s, height .5s;
 }
 
 @media screen and (min-width: 701px) {
+  $left-margin: #{$margin*2px + $logo-width};
+
   .mainContainer {
-    top: 5%;
-    height: 95%;
+    top: 0;
+    left: $left-margin;
+    height: 100%;
+    width: calc(100% - #{$left-margin});
   }
 }
