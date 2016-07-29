@@ -30,13 +30,13 @@ $logo-width: $logo-height*7/6;
 .linkContainer {
   position: fixed;
   z-index: 2;
-  height: 180px;
+  height: 160px;
   top: $margin*2 + $logo-height + 0px;
   left: $margin + 0px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 
   visibility: hidden;
   transition: visibility 0s 3s;

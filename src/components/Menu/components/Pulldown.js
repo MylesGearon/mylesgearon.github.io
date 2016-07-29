@@ -53,7 +53,8 @@ export default class Pulldown extends React.Component {
     ]
     return (
       <div
-        onClick={this._toggleMenu.bind(this)}>
+        onClick={this._toggleMenu.bind(this)}
+        className={classes.container}>
         <Isvg
           src={EmbeddingLogo}
           wrapper={React.DOM.div}

@@ -2,6 +2,7 @@ import React from 'react'
 import TransitionGroup from 'react-addons-css-transition-group'
 
 import Menu from '../../../components/Menu'
+
 import classes from '../CoreLayout.scss'
 import '../../../styles/core.scss'
 
@@ -40,19 +41,22 @@ export default class CoreLayout extends React.Component {
   render () {
     return (
       <div className={classes.background}>
-        <Menu {...this.props} />
         <div className={classes.viewContainer || 'view-container'}>
           <TransitionGroup
-            transitionName='example'
-            transitionAppear
+            transitionName={{
+              enter: classes.enter,
+              enterActive: classes.enterActive,
+              leave: classes.leave,
+              leaveActive: classes.leaveActive
+            }}
             transitionEnterTimeout={1500}
-            transitionAppearTimeout={1500}
             transitionLeaveTimeout={1500}>
             {React.cloneElement(this.props.children,
               {key: this.props.router.locationBeforeTransitions.pathname}
             )}
           </TransitionGroup>
         </div>
+        <Menu {...this.props} />
       </div>
     )
   }

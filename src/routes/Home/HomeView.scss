@@ -4,8 +4,12 @@
 
 .viewBackground {
   position: fixed;
-  height: 1000%;
-  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+  background: #6b7725;
 }
 
 .mainContainer {
@@ -24,7 +28,7 @@
   transition: transform .5s;
 }
 
-@media screen and (min-width: 701px) {
+@media screen and (min-width: $breakpoint-2) {
   $left-margin: #{$margin*2px + $logo-width};
 
   .mainContainer {
