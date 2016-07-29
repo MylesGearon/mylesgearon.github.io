@@ -32,9 +32,9 @@ export default class CoreLayout extends React.Component {
 
   render () {
     return (
-      <div className={classes.container}>
+      <div className={classes.background}>
         <Menu {...this.props} />
-        <div className={classes.mainContainer}>
+        <div className={classes.viewContainer || 'view-container'}>
           {this.props.children}
         </div>
       </div>

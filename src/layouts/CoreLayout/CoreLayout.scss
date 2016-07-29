@@ -1,27 +1,13 @@
-@import '../../components/Menu/styles/Header.scss';
-@import '../../components/Menu/styles/Pulldown.scss';
-
-.container {
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
   min-height: 100%;
+  width: 100%;
   background: radial-gradient(circle, #222, #0E0E0E);
 }
 
-.mainContainer {
-  position: absolute;
-  top: $header-height;
-  left: 0;
-  height: calc(100% - #{$header-height});
+.viewContainer {
+  min-height: 100%;
   width: 100%;
-
-}
-
-@media screen and (min-width: 701px) {
-  $left-margin: #{$margin*2px + $logo-width};
-
-  .mainContainer {
-    top: 0;
-    left: $left-margin;
-    height: 100%;
-    width: calc(100% - #{$left-margin});
-  }
 }
