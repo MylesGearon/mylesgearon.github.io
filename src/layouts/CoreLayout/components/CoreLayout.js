@@ -1,4 +1,6 @@
 import React from 'react'
+import TransitionGroup from 'react-addons-css-transition-group'
+
 import Menu from '../../../components/Menu'
 import classes from '../CoreLayout.scss'
 import '../../../styles/core.scss'
@@ -11,7 +13,8 @@ export default class CoreLayout extends React.Component {
     children: p.element.isRequired,
     breakpointRanges: p.array.isRequired,
     currentBreakpointInd: p.oneOfType([p.number, p.object]),
-    updateBreakpoint: p.func.isRequired
+    updateBreakpoint: p.func.isRequired,
+    router: p.object.isRequired
   }
 
   constructor () {
@@ -30,12 +33,25 @@ export default class CoreLayout extends React.Component {
     })
   }
 
+  shouldComponentUpdate (nextProps) {
+    return nextProps.children !== this.props.children
+  }
+
   render () {
     return (
       <div className={classes.background}>
         <Menu {...this.props} />
         <div className={classes.viewContainer || 'view-container'}>
-          {this.props.children}
+          <TransitionGroup
+            transitionName='example'
+            transitionAppear
+            transitionEnterTimeout={1500}
+            transitionAppearTimeout={1500}
+            transitionLeaveTimeout={1500}>
+            {React.cloneElement(this.props.children,
+              {key: this.props.router.locationBeforeTransitions.pathname}
+            )}
+          </TransitionGroup>
         </div>
       </div>
     )

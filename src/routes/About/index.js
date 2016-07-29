@@ -1,6 +1,10 @@
-import AboutView from './components/AboutView'
-
 export default {
-  path: '/about',
-  component: AboutView
+  path: 'about',
+  getComponent (nextState, cb) {
+    require.ensure([], require => {
+      const About = require('./components/AboutView').default
+
+      cb(null, About)
+    })
+  }
 }
