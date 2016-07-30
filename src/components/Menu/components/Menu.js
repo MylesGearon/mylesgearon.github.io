@@ -14,7 +14,8 @@ export default class Menu extends React.Component {
     visible: p.bool.isRequired,
     expanded: p.bool.isRequired,
     expandMenu: p.func.isRequired,
-    closeMenu: p.func.isRequired
+    closeMenu: p.func.isRequired,
+    router: p.object.isRequired
   }
 
   constructor () {
@@ -44,7 +45,8 @@ export default class Menu extends React.Component {
       return null
     }
     if (this.state.menuStyle === 'small') {
-      curMenu = <Header key='header' />
+      curMenu = <Header key='header'
+        path={this.props.router.locationBeforeTransitions.pathname} />
       classes = headerClasses
       lastClasses = pulldownClasses
     } else if (this.state.menuStyle === 'large') {

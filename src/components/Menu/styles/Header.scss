@@ -16,6 +16,10 @@ $header-height: 70px;
   align-items: center;
 
   font-family: 'Lato', Arial;
+
+  &.scrollable {
+    position: absolute;
+  }
 }
 
 /*

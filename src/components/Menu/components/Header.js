@@ -7,12 +7,30 @@ import classes from '../styles/Header.scss'
 import EmbeddingLogo from '../assets/embeddingLogo.svg'
 import FallbackLogo from '../assets/logo.svg'
 
+const p = React.PropTypes
+
 export default class Header extends React.Component {
+
+  static propTypes = {
+    path: p.string.isRequired
+  }
+
+  constructor () {
+    super()
+    this.scrollableRoutes = [
+      '/about'
+    ]
+  }
 
   render () {
     return (
       <div
-        className={classes.header}>
+        className={classes.header +
+          (this.scrollableRoutes.indexOf(this.props.path) !== -1
+            ? ' ' + classes.scrollable
+            : ''
+          )
+      }>
         <IndexLink to='/'
           className={classes.headerLink}
           activeClassName={classes.activeRoute}>
