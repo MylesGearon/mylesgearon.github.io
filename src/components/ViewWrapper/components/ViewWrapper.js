@@ -6,8 +6,9 @@ export const View = props => {
   return (
     <div>
       <div className={classes.background} />
-      <main className={classes.mainContainer}>{props.children}</main>
+      <main className={classes.mainContainer + (props.className ? ' ' + props.className : '')}>{props.children}</main>
     </div>
   )
 }
+
 export default View

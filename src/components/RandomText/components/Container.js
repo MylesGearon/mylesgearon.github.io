@@ -8,6 +8,7 @@ export default class TextContainer extends React.Component {
 
   static propTypes = {
     text: p.string.isRequired,
+    className: p.string,
     width: p.number.isRequired,
     // Sets font-size
     fontHeight: p.number.isRequired,
@@ -94,7 +95,7 @@ export default class TextContainer extends React.Component {
     } else {
       return (
         <div
-          className={classes.container}
+          className={classes.container + ' ' + this.props.className}
           style={{
             height: this.state.numRows * this.props.fontHeight,
             width: this.props.width,
