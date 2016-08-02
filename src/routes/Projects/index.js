@@ -1,7 +1,19 @@
-import ProjectsView from './components/ProjectsView'
+import React from 'react'
 
+import { injectReducer } from '../../store/reducers'
+import ProjectsList from './routes/List'
 
-export default {
-  path: '/projects',
-  component: ProjectsView
-}
+export default store => ({
+  path: 'projects',
+  getComponent (nextState, cb) {
+    require.ensure([], require => {
+      const RootLayout = require('./layouts/ProjectsRootLayout').default
+      const reducer = require('./modules/projects').default
+
+      injectReducer(store, {key: 'projects', reducer})
+
+      cb(null, RootLayout)
+    })
+  },
+  indexRoute: ProjectsList
+})

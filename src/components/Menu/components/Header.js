@@ -18,7 +18,8 @@ export default class Header extends React.Component {
   constructor () {
     super()
     this.scrollableRoutes = [
-      '/about'
+      '/about',
+      '/projects'
     ]
   }
 

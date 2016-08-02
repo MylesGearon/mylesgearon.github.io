@@ -13,7 +13,7 @@ export const createRoutes = (store) => ({
     require.ensure([], require => {
       cb(null, [
         require('./About').default,
-        require('./Projects').default,
+        require('./Projects').default(store),
         require('./Contact').default,
         require('./Counter').default(store),
         require('./Zen').default(store)
