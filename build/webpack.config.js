@@ -99,7 +99,7 @@ if (__DEV__) {
     })
   )
   webpackConfig.weinreDebugTarget = `
-    <script src="http://${config.server_host}:${config.weinre_server_port}/target/target-script-min.js"></script> '
+    <script src="http://${config.server_host}:${config.weinre_server_port}/target/target-script-min.js"></script>
   `
 } else if (__PROD__) {
   debug('Enable plugins for production (OccurenceOrder, Dedupe & UglifyJS).')
