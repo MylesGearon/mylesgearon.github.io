@@ -15,5 +15,12 @@ export default store => ({
       cb(null, RootLayout)
     })
   },
-  indexRoute: ProjectsList
+  indexRoute: ProjectsList,
+  getChildRoutes (location, cb) {
+    require.ensure([], require => {
+      cb(null, [
+        require('./routes/Projects/ScoreFluent').default
+      ])
+    })
+  }
 })

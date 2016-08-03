@@ -17,14 +17,20 @@
   padding: 10px;
   padding-bottom: 0;
 
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s, transform 1s, box-shadow 1s, background 1s, border 1s;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s, box-shadow 1s, background 1s, border 1s;
+
+  text-decoration: none;
+
+  hr {
+    color: white;
+  }
 
   img, span {
     width: 100%;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import ImageLoader from 'react-imageloader'
 
 import View from '../../../../components/ViewWrapper'
@@ -41,7 +42,8 @@ export default class ProjectsList extends React.Component {
           const randomTextFontHeight = 30
           const randomTextWidth = randomTextFontHeight / 2 * project.title.length
           return (
-            <div
+            <Link
+              to={'/projects/' + project.path}
               key={ind}
               className={classes.projectContainer + (this.state.showProject[ind] ? ' ' + classes.active : '')} >
               <ImageLoader
@@ -61,7 +63,7 @@ export default class ProjectsList extends React.Component {
                 transform: `translateY(${randomTextFontHeight/2}px)`
               }} />
               <p className={classes.description}>{project.description}</p>
-            </div>
+            </Link>
           )
         })}
       </View>

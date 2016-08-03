@@ -1,7 +1,7 @@
 import React from 'react'
 
-import RandomText from '../../../../components/RandomText'
-import classes from '../../styles/Project.scss'
+import RandomText from '../../../../../components/RandomText'
+import classes from '../../../styles/Project.scss'
 
 export const scoreFluent = () => (
   <div className={classes.projectContainer}>

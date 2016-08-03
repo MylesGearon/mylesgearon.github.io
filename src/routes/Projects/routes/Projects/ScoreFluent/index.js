@@ -1,6 +1,10 @@
-import ScoreFluent from './ScoreFluent'
-
 export default {
   path: 'score-fluent',
-  component: ScoreFluent
+  getComponent (nextState, cb) {
+    require.ensure([], require => {
+      const ScoreFluent = require('./ScoreFluent').default
+
+      cb(null, ScoreFluent)
+    })
+  }
 }
