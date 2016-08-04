@@ -38,7 +38,7 @@ export default class ProjectsList extends React.Component {
         {Projects.map((project, ind) => {
           // image loader refs
           const placeholder = require('../Projects/' + project.dirname + '/assets/1-placeholder.png')
-          const img = require('../Projects/' + project.dirname + '/assets/1.png')
+          const img = require('../Projects/' + project.dirname + '/assets/1-list-version.png')
           const preloader = () => <img src={placeholder} />
 
           // title text sizing
