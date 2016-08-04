@@ -120,6 +120,7 @@ export default class ScoreFluent extends React.Component {
             <Tool icon='mongodb' show />
             <Tool icon='passport' show />
             <Tool icon='es6' show />
+            <Tool icon='node' show />
             <Tool icon='express' show />
             <Tool icon='gulp' show />
             <Tool icon='webpack' show />

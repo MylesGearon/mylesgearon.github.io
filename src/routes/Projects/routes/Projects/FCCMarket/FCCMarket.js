@@ -119,6 +119,7 @@ export default class ScoreFluent extends React.Component {
             <Tool icon='socketio' show />
             <Tool icon='heroku' show />
             <Tool icon='mongodb' show />
+            <Tool icon='node' show />
             <Tool icon='d3' show />
             <Tool icon='bootstrap' show />
           </div>
