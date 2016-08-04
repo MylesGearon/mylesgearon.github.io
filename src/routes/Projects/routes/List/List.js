@@ -36,11 +36,16 @@ export default class ProjectsList extends React.Component {
     return (
       <View className={classes.container}>
         {Projects.map((project, ind) => {
+
+          // image loader refs
           const placeholder = require('../Projects/' + project.dirname + '/assets/1-placeholder.png')
           const img = require('../Projects/' + project.dirname + '/assets/1.png')
           const preloader = () => <img src={placeholder} />
+
+          // title text sizing
           const randomTextFontHeight = 30
           const randomTextWidth = randomTextFontHeight / 2 * project.title.length
+
           return (
             <Link
               to={'/projects/' + project.path}

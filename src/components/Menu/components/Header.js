@@ -24,14 +24,13 @@ export default class Header extends React.Component {
   }
 
   render () {
+    const scrollable = this.scrollableRoutes.filter(route =>
+      this.props.path.indexOf(route) !== -1
+    ).length > 0
     return (
       <div
         className={classes.header +
-          (this.scrollableRoutes.indexOf(this.props.path) !== -1
-            ? ' ' + classes.scrollable
-            : ''
-          )
-      }>
+          (scrollable ? ' ' + classes.scrollable : '')}>
         <IndexLink to='/'
           className={classes.headerLink}
           activeClassName={classes.activeRoute}>
