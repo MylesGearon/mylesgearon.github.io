@@ -1,5 +1,11 @@
 export default [
   {
+    dirname: 'Meta',
+    path: 'meta',
+    title: 'mylesgearon.com',
+    description: 'An Overwrought SPA Portfolio'
+  },
+  {
     dirname: 'ScoreFluent',
     path: 'score-fluent',
     title: 'Score Fluent',

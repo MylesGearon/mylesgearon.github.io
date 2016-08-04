@@ -17,6 +17,7 @@ export default store => ({
   getChildRoutes (location, cb) {
     require.ensure([], require => {
       cb(null, [
+        require('./routes/Projects/Meta').default(store),
         require('./routes/Projects/ScoreFluent').default(store),
         require('./routes/Projects/TheLearningCenter').default(store),
         require('./routes/Projects/FCCMarket').default(store),
