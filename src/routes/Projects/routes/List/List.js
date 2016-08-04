@@ -24,7 +24,7 @@ export default class ProjectsList extends React.Component {
         const showProject = this.state.showProject
         showProject[ind] = true
         this.setState({showProject})
-      }, ind * 500))
+      }, ind * 800))
     })
   }
 
@@ -36,7 +36,6 @@ export default class ProjectsList extends React.Component {
     return (
       <View className={classes.container}>
         {Projects.map((project, ind) => {
-
           // image loader refs
           const placeholder = require('../Projects/' + project.dirname + '/assets/1-placeholder.png')
           const img = require('../Projects/' + project.dirname + '/assets/1.png')
@@ -60,12 +59,12 @@ export default class ProjectsList extends React.Component {
                 className={classes.title}
                 width={randomTextWidth}
                 fontHeight={randomTextFontHeight}
-                animationSpeed={1000}
-                animationDuration={2000}
-                animate='in' />
+                animationSpeed={600}
+                animationDuration={1500}
+                animate={(this.state.showProject[ind] ? 'in' : 'out')} />
               <hr style={{
                 width: randomTextWidth,
-                transform: `translateY(${randomTextFontHeight/2}px)`
+                transform: `translateY(${randomTextFontHeight / 2}px)`
               }} />
               <p className={classes.description}>{project.description}</p>
             </Link>
