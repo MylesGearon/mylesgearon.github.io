@@ -84,6 +84,7 @@ export const scoreFluent = () => {
         <div className={classes.stackContainer}>
           <Tool icon='react' show />
           <Tool icon='react-router' show />
+          <Tool icon='redux' show />
           <Tool icon='sass' show />
           <Tool icon='es6' show />
           <Tool icon='webpack' show />
