@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { injectReducer } from '../../store/reducers'
 import ProjectsList from './routes/List'
 

@@ -115,14 +115,16 @@ export default class ScoreFluent extends React.Component {
           <h2>Tools</h2>
           <div className={classes.stackContainer}>
             <Tool icon='react' show />
-            <Tool icon='react-router' show />
-            <Tool icon='redux' show />
+            <Tool icon='alt' show isSvg={false} />
             <Tool icon='sass' show />
             <Tool icon='mongodb' show />
+            <Tool icon='passport' show />
             <Tool icon='es6' show />
+            <Tool icon='express' show />
+            <Tool icon='gulp' show />
             <Tool icon='webpack' show />
+            <Tool icon='lodash' show />
             <Tool icon='heroku' show />
-            <Tool icon='weinre' show isSvg={false} />
           </div>
         </div>
       </View>
