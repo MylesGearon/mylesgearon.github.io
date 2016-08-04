@@ -19,7 +19,7 @@ export default store => ({
   getChildRoutes (location, cb) {
     require.ensure([], require => {
       cb(null, [
-        require('./routes/Projects/ScoreFluent').default
+        require('./routes/Projects/ScoreFluent').default(store)
       ])
     })
   }

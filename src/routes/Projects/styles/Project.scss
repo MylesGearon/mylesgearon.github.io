@@ -104,7 +104,7 @@
   }
 
   .title {
-    margin: 0 0 60px;
+    margin: 0 0 80px;
   }
 
   .linksContainer, .description, .stackRule, .stackContainer {
@@ -134,5 +134,22 @@
   // ???
   .stackContainer {
     margin: 100px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-4) {
+  .title {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-5) {
+
+  .siteLink {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 20px;
   }
 }
