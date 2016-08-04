@@ -21,22 +21,22 @@ export default class ScoreFluent extends React.Component {
     super()
     this.titleSizesByBreakpoint = {
       0: {
-        fontHeight: 35
+        fontHeight: 18
       },
       1: {
-        fontHeight: 40
+        fontHeight: 25
       },
       2: {
-        fontHeight: 50
+        fontHeight: 32
       },
       3: {
-        fontHeight: 60
+        fontHeight: 40
       },
       4: {
-        fontHeight: 60
+        fontHeight: 45
       },
       5: {
-        fontHeight: 60
+        fontHeight: 48
       }
     }
   }
@@ -48,7 +48,7 @@ export default class ScoreFluent extends React.Component {
     const img = require('./assets/1.png')
 
     // title text sizing
-    const text = 'Score Fluent'
+    const text = 'Ouding Legal Nurse Consulting'
     const randomTextFontHeight = this.titleSizesByBreakpoint[this.props.curBreakpoint].fontHeight
     const randomTextWidth = randomTextFontHeight / 2 * text.length
 
@@ -71,14 +71,14 @@ export default class ScoreFluent extends React.Component {
           <div className={classes.linksContainer}>
             <a
               className={classes.siteLink}
-              href='http://score-fluent.herokuapp.com'
+              href='http://fcc-market.herokuapp.com'
               target='_blank'>
-              score-fluent.herokuapp.com
+              fcc-market.herokuapp.com
             </a>
             |
             <a
               className={classes.githubLogoContainer}
-              href='http://github.com/mityadsch/score-fluent'
+              href='http://github.com/mityadsch/fcc-market'
               target='_blank'>
               <Isvg
                 src={GithubLogo}
@@ -114,15 +114,8 @@ export default class ScoreFluent extends React.Component {
           <hr className={classes.stackRule} />
           <h2>Tools</h2>
           <div className={classes.stackContainer}>
-            <Tool icon='react' show />
-            <Tool icon='react-router' show />
-            <Tool icon='redux' show />
-            <Tool icon='sass' show />
-            <Tool icon='mongodb' show />
-            <Tool icon='es6' show />
-            <Tool icon='webpack' show />
-            <Tool icon='heroku' show />
-            <Tool icon='weinre' show isSvg={false} />
+            <Tool icon='jquery' show />
+            <Tool icon='grunt' show />
           </div>
         </div>
       </View>
