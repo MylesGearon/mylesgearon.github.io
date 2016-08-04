@@ -1,0 +1,47 @@
+@import '../../styles/breakpoints.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.row {
+
+  margin: 20px 0;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
+
+  &.active {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-1) {
+  .row {
+    margin: 30px 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-2) {
+  .row {
+    margin: 30px 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-4) {
+  .linkContainer {
+    height: 55%;
+  }
+}

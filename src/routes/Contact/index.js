@@ -1,6 +1,16 @@
-import ContactView from './components/ContactView'
+import { connect } from 'react-redux'
 
 export default {
   path: '/contact',
-  component: ContactView
+  getComponent (nextState, cb) {
+    require.ensure([], require => {
+      const ContactView = require('./components/ContactView').default
+
+      const mapStateToProps = state => ({
+        curBreakpoint: state.breakpoint.current
+      })
+
+      cb(null, connect(mapStateToProps, {})(ContactView))
+    })
+  }
 }
