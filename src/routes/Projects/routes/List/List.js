@@ -43,7 +43,7 @@ export default class ProjectsList extends React.Component {
           const preloader = () => <img src={placeholder} />
 
           // title text sizing
-          const randomTextFontHeight = 30
+          const randomTextFontHeight = 25
           const randomTextWidth = randomTextFontHeight / 2 * project.title.length
 
           return (
