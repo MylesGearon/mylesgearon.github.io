@@ -8,6 +8,8 @@ const localip = ip.address()
 const debug = _debug('app:config')
 debug('Creating default configuration.')
 
+import Projects from '../src/routes/Projects/routes/Projects'
+
 // ========================================================
 // Default Configuration
 // ========================================================
@@ -22,7 +24,12 @@ const config = {
   dir_dist   : 'dist',
   dir_server : 'server',
   dir_test   : 'tests',
-  routes: ['about', 'projects', 'contact'],
+  routes: [
+    'about',
+    'projects',
+    ...Projects.map(project => `projects/${project.path}`),
+    'contact'
+  ],
 
   // ----------------------------------
   // Server Configuration

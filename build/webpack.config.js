@@ -73,6 +73,7 @@ webpackConfig.plugins = [
 
 // Generate index.html for each route
 config.routes.forEach(route => {
+  console.log(route)
   webpackConfig.plugins.push(
     new HtmlWebpackPlugin({
       template: paths.client('index.ejs'),
