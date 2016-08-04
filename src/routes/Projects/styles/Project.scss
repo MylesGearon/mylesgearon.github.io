@@ -1,6 +1,15 @@
+@import '../../../styles/breakpoints.scss';
+@import '../../../components/Menu/styles/Pulldown.scss';
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .projectContainer {
   width: 80%;
-  margin-left: 10%;
 
   display: flex;
   flex-direction: column;
@@ -22,7 +31,7 @@
   width: 100%;
 }
 
-.linkContainer {
+.linksContainer {
   height: 40px;
   width: 100%;
 
@@ -73,10 +82,52 @@
 
 .stackContainer {
   width: 100%;
+  margin-bottom: 30px;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (min-width: $breakpoint-1) {
+  .linksContainer {
+    margin: 15px 0 0;
+  }
+}
+
+@media screen and (min-width: $breakpoint-2) {
+  .projectContainer {
+    width: calc(100% - #{$logo-width + $margin*4 + 0px});
+    margin-top: #{$margin + $logo-height + 0px};
+  }
+
+  .title {
+    margin: 0 0 60px;
+  }
+
+  .linksContainer, .description, .stackRule, .stackContainer {
+    width: 90%;
+  }
+
+  .linksContainer {
+    margin: 40px 0 30px;
+  }
+
+  .siteLink {
+    font-size: 18px;
+  }
+
+  .githubLogoContainer, .githubLogoContainer svg {
+    height: 40px;
+    width: 40px;
+  }
+
+}
+
+@media screen and (min-width: $breakpoint-3) {
+  .projectContainer {
+    width: 840px;
+  }
 }
