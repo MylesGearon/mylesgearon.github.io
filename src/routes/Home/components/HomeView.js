@@ -33,7 +33,7 @@ export default class HomeView extends React.Component {
           fontHeight: 50
         },
         subtitle: {
-          width: 170,
+          width: 180,
           fontHeight: 18
         }
       },
@@ -43,7 +43,7 @@ export default class HomeView extends React.Component {
           fontHeight: 55
         },
         subtitle: {
-          width: 170,
+          width: 180,
           fontHeight: 18
         }
       },
@@ -53,7 +53,7 @@ export default class HomeView extends React.Component {
           fontHeight: 60
         },
         subtitle: {
-          width: 290,
+          width: 270,
           fontHeight: 18
         }
       },
@@ -63,7 +63,7 @@ export default class HomeView extends React.Component {
           fontHeight: 60
         },
         subtitle: {
-          width: 310,
+          width: 290,
           fontHeight: 20
         }
       },
@@ -73,7 +73,7 @@ export default class HomeView extends React.Component {
           fontHeight: 60
         },
         subtitle: {
-          width: 310,
+          width: 380,
           fontHeight: 20
         }
       },
@@ -128,10 +128,10 @@ export default class HomeView extends React.Component {
             animate='in' />
           <br />
           <RandomText
-            text="I'm a self-taught web developer from Chicago."
+            text="I'm a Chicago-Based Fullstack Web Dev."
             width={subtitleSizes.width}
             fontHeight={subtitleSizes.fontHeight}
-            animationSpeed={400}
+            animationSpeed={600}
             animationRandomness={0}
             animationDuration={secondAnimationDuration}
             animate={this.state.animateDescription} />
