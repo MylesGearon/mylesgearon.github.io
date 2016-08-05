@@ -6,10 +6,12 @@
   left: 0;
   min-height: 100%;
   width: 100%;
-  background: radial-gradient(circle, #222, #0E0E0E);
+
+  background: black;
 }
 
 .viewContainer {
+  position: absolute;
   min-height: 100%;
   width: 100%;
 }
@@ -21,7 +23,7 @@
 // Animation for Header Menu layout
 .enter {
   opacity: 0;
-  transition: opacity 1.5s;
+  transition: opacity 1s .5s;
 }
 
 .enterActive {
@@ -29,30 +31,18 @@
 }
 
 .leave {
-  opacity: 1;
-  transition: opacity 1.5s;
+  overflow: hidden;
 }
 
-.leaveActive {
+.leave > * {
+  transition: opacity ease-in 1.5s,
+    transform cubic-bezier(1,0,1,1) 1.5s;
+}
+
+.leaveActive > main {
+  transform: translateY(150%);
+}
+
+.leaveActive > div {
   opacity: 0;
-}
-
-// Animation for Pulldown Menu layout
-
-@media screen and (min-width: $breakpoint-2) {
-  .enter {
-
-  }
-
-  .enterActive {
-
-  }
-
-  .leave {
-
-  }
-
-  .leaveActive {
-
-  }
 }
