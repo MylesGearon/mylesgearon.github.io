@@ -49,8 +49,8 @@ export default class CoreLayout extends React.Component {
               leave: classes.leave,
               leaveActive: classes.leaveActive
             }}
-            transitionEnterTimeout={1500}
-            transitionLeaveTimeout={1500}>
+            transitionEnterTimeout={2000}
+            transitionLeaveTimeout={2000}>
             {React.cloneElement(this.props.children,
               {key: this.props.router.locationBeforeTransitions.pathname}
             )}
