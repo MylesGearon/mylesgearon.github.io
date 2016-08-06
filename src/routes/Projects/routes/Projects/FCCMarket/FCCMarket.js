@@ -88,28 +88,13 @@ export default class ScoreFluent extends React.Component {
             </a>
           </div>
           <p className={classes.description}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure minima
-            ullam officia ut cum iusto veritatis in officiis, facilis ratione
-            excepturi unde delectus itaque eaque vitae voluptatem, sit nobis nostrum
-            consequuntur maxime pariatur, eligendi cupiditate. Quidem laborum, ut,
-            autem iusto corporis illum, nesciunt eos eligendi ipsum tempore expedita,
-            harum maxime.
-          </p>
-          <p className={classes.description}>
-            Quisquam eveniet adipisci cupiditate, in eum deleniti ex suscipit error
-            doloribus odio. Numquam voluptatibus fuga similique animi minima
-            consectetur omnis, tempore, itaque culpa. Facilis ipsa facere voluptatibus
-            enim voluptates nemo iste totam in iure sint inventore, esse voluptate
-            laboriosam velit, fugit, maxime possimus itaque quidem quibusdam odit
-            voluptas modi id!
-          </p>
-          <p className={classes.description}>
-            Esse quos optio voluptatibus voluptate nostrum reprehenderit earum
-            inventore. Ducimus voluptas maxime ipsum libero. Maiores aliquam, hic
-            ducimus libero non distinctio vero ex provident, alias omnis! Soluta
-            corporis, architecto voluptates quo beatae, facere, quasi eos laudantium
-            voluptatibus quibusdam veniam consequuntur tempora nostrum porro nulla
-            repudiandae quidem dolorem. Voluptates, molestiae, reprehenderit.
+            This is one of <a href="http://fcc-bars.herokuapp.com/"
+            target="_blank">many</a> <a href="http://fcc-bars.herokuapp.com/"
+            target="_blank">FreeCodeCamp</a> <a
+            href="http://freecodecamp.com/mityadsch"
+            target="_blank">Projects</a> I've completed that I choose to show
+            here because it uses a bunch of interesting tools that I've not used
+            elsewhere like Socket.IO and Bootstrap. That's all.
           </p>
           <hr className={classes.stackRule} />
           <h2>Tools</h2>
