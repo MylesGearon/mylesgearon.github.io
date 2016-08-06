@@ -88,28 +88,31 @@ export default class ScoreFluent extends React.Component {
             </a>
           </div>
           <p className={classes.description}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure minima
-            ullam officia ut cum iusto veritatis in officiis, facilis ratione
-            excepturi unde delectus itaque eaque vitae voluptatem, sit nobis nostrum
-            consequuntur maxime pariatur, eligendi cupiditate. Quidem laborum, ut,
-            autem iusto corporis illum, nesciunt eos eligendi ipsum tempore expedita,
-            harum maxime.
+            The Learning Center is a great nonprofit in my neighborhood I've
+            been volunteering at for about a year. When I mentioned that I make
+            websites we decided that theirs was due for an update. But there
+            were a few rather crazy constraints I had to work with:
+
+            <ul>
+              <li>given the budget cuts from the state, they needed to be able
+              to host their site for free</li>
+              <li>they wanted more control over the layout and design of the
+              site than something like Google Sites offers</li>
+              <li>they wanted to be able to update more than just the text of
+              the site with minimal technical investment in case I got hit by a
+              bus</li>
+            </ul>
           </p>
           <p className={classes.description}>
-            Quisquam eveniet adipisci cupiditate, in eum deleniti ex suscipit error
-            doloribus odio. Numquam voluptatibus fuga similique animi minima
-            consectetur omnis, tempore, itaque culpa. Facilis ipsa facere voluptatibus
-            enim voluptates nemo iste totam in iure sint inventore, esse voluptate
-            laboriosam velit, fugit, maxime possimus itaque quidem quibusdam odit
-            voluptas modi id!
-          </p>
-          <p className={classes.description}>
-            Esse quos optio voluptatibus voluptate nostrum reprehenderit earum
-            inventore. Ducimus voluptas maxime ipsum libero. Maiores aliquam, hic
-            ducimus libero non distinctio vero ex provident, alias omnis! Soluta
-            corporis, architecto voluptates quo beatae, facere, quasi eos laudantium
-            voluptatibus quibusdam veniam consequuntur tempora nostrum porro nulla
-            repudiandae quidem dolorem. Voluptates, molestiae, reprehenderit.
+            Given those limitations, the only thing way I could imagine getting
+            up the site was by hosting it on Github Pages and using no tools
+            less common than jQuery. Since I couldn't expect them to keep a
+            development environment set up I had to rely on Github to build the
+            site, and Github only runs a rather small subset of what Jekyll can
+            do. So I plugged away for a while until we realized that the
+            updating process was still a bit too technical to expect to pass on
+            in a world filled with buses. So for now it sits in stasis filled
+            with lorem text.
           </p>
           <hr className={classes.stackRule} />
           <h2>Tools</h2>
