@@ -88,28 +88,23 @@ export default class ScoreFluent extends React.Component {
             </a>
           </div>
           <p className={classes.description}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure minima
-            ullam officia ut cum iusto veritatis in officiis, facilis ratione
-            excepturi unde delectus itaque eaque vitae voluptatem, sit nobis nostrum
-            consequuntur maxime pariatur, eligendi cupiditate. Quidem laborum, ut,
-            autem iusto corporis illum, nesciunt eos eligendi ipsum tempore expedita,
-            harum maxime.
+            This app was the first relatively large thing I made from scratch
+            that wasn't based on a curriculum or assigned task. I made it
+            because I'd been forced several times to recommend a free
+            sight-reading tool online and failed to find anything that didn't
+            look or perform like it hadn't been updated in years. And so far as
+            I can tell it already has a few features, like unusual clefs, that
+            I'd personally wanted in apps I've used (learning tenor clef is no
+            fun at all).
           </p>
           <p className={classes.description}>
-            Quisquam eveniet adipisci cupiditate, in eum deleniti ex suscipit error
-            doloribus odio. Numquam voluptatibus fuga similique animi minima
-            consectetur omnis, tempore, itaque culpa. Facilis ipsa facere voluptatibus
-            enim voluptates nemo iste totam in iure sint inventore, esse voluptate
-            laboriosam velit, fugit, maxime possimus itaque quidem quibusdam odit
-            voluptas modi id!
-          </p>
-          <p className={classes.description}>
-            Esse quos optio voluptatibus voluptate nostrum reprehenderit earum
-            inventore. Ducimus voluptas maxime ipsum libero. Maiores aliquam, hic
-            ducimus libero non distinctio vero ex provident, alias omnis! Soluta
-            corporis, architecto voluptates quo beatae, facere, quasi eos laudantium
-            voluptatibus quibusdam veniam consequuntur tempora nostrum porro nulla
-            repudiandae quidem dolorem. Voluptates, molestiae, reprehenderit.
+            It's truly a single page application, there's not a bit of routing
+            in it. The only calls to the Node server are for JWTs and JSON. I
+            just love how magical it feels to login/logout without any kind of
+            page refresh. The client uses React and regrettably the no longer
+            maintained Flux implementation Alt. Alt was the first library I've
+            been bitten by using after maintenance was dropped, and I'll never
+            make that mistake again!
           </p>
           <hr className={classes.stackRule} />
           <h2>Tools</h2>
