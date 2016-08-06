@@ -98,13 +98,13 @@ export default class ScoreFluent extends React.Component {
             fun at all).
           </p>
           <p className={classes.description}>
-            It's truly a single page application, there's not a bit of routing
-            in it. The only calls to the Node server are for JWTs and JSON. I
-            just love how magical it feels to login/logout without any kind of
-            page refresh. The client uses React and regrettably the no longer
-            maintained Flux implementation Alt. Alt was the first library I've
-            been bitten by using after maintenance was dropped, and I'll never
-            make that mistake again!
+            It's an extremely single page application, there's not a bit of
+            routing in it! The only calls to the Node server are for JWTs and
+            JSON. I just love how magical it feels to login/logout without any
+            kind of page refresh. The client uses React and regrettably the no
+            longer maintained Flux implementation Alt. Alt was the first library
+            I've been punished for using after maintenance was dropped, and I'll
+            never make that mistake again!
           </p>
           <hr className={classes.stackRule} />
           <h2>Tools</h2>
