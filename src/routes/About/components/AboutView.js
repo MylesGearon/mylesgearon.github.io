@@ -8,37 +8,21 @@ const p = React.PropTypes
 
 const titleAnimationDuration = 2000
 const paragraphs = [
-  `Lorem ipsum dolor sit amet, consectetur
-  adipisicing elit. Reiciendis, suscipit ea. Non repellat in modi
-  aliquam hic, quos facilis natus totam ducimus. Debitis voluptate
-  dignissimos porro hic officiis nesciunt iure harum animi reiciendis
-  veritatis autem dolore praesentium aut nobis sequi similique, nam est
-  optio ipsum. Error suscipit numquam officiis, voluptate nam id maxime
-  expedita quidem ex debitis eum iusto sit!`,
+  `Hello again! I'm constantly in awe of technology and I love the tangibility and
+  craftsmanship of working on the web, so I'm looking for my first
+  apprenticeship or junior position where I can be stretched in new directions.`,
 
-  `Lorem ipsum dolor sit amet, consectetur
-  adipisicing elit. Reiciendis, suscipit ea. Non repellat in modi
-  aliquam hic, quos facilis natus totam ducimus. Debitis voluptate
-  dignissimos porro hic officiis nesciunt iure harum animi reiciendis
-  veritatis autem dolore praesentium aut nobis sequi similique, nam est
-  optio ipsum. Error suscipit numquam officiis, voluptate nam id maxime
-  expedita quidem ex debitis eum iusto sit!`,
+  `My programming skills center around JavaScript, and I'm comfortable with
+  everything from fundamentals like promises and closure to tools like Node and
+  MongoDB. And of course CSS and HTML come with that. Most of my work is in the
+  MERN stack, though I've also dabbled in Python and Java in academic contexts,
+  and I'm planning to pick up Ruby next. At least half the reason I do web dev
+  is because I get an inordinate amount of joy out of having a shiny new
+  technology to play with.`,
 
-  `Lorem ipsum dolor sit amet, consectetur
-  adipisicing elit. Reiciendis, suscipit ea. Non repellat in modi
-  aliquam hic, quos facilis natus totam ducimus. Debitis voluptate
-  dignissimos porro hic officiis nesciunt iure harum animi reiciendis
-  veritatis autem dolore praesentium aut nobis sequi similique, nam est
-  optio ipsum. Error suscipit numquam officiis, voluptate nam id maxime
-  expedita quidem ex debitis eum iusto sit!`,
-
-  `Lorem ipsum dolor sit amet, consectetur
-  adipisicing elit. Reiciendis, suscipit ea. Non repellat in modi
-  aliquam hic, quos facilis natus totam ducimus. Debitis voluptate
-  dignissimos porro hic officiis nesciunt iure harum animi reiciendis
-  veritatis autem dolore praesentium aut nobis sequi similique, nam est
-  optio ipsum. Error suscipit numquam officiis, voluptate nam id maxime
-  expedita quidem ex debitis eum iusto sit!`
+  `When I'm not sitting in front of a screen I sink most of my time into
+  generalist nerdery, becoming a less awful pianist/baritone/cellist, tutoring
+  STEM topics, or getting very - often tragically - ambitious with an oven.`
 ]
 
 export default class AboutView extends React.Component {
@@ -104,7 +88,7 @@ export default class AboutView extends React.Component {
       <View className={classes.container}>
         <div className={classes.textContainer}>
           <RandomText
-            text='About Myles'
+            text='About Me'
             className={classes.title}
             width={titleSizes.width}
             fontHeight={titleSizes.fontHeight}
