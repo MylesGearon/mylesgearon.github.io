@@ -88,28 +88,40 @@ export default class ScoreFluent extends React.Component {
             </a>
           </div>
           <p className={classes.description}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure minima
-            ullam officia ut cum iusto veritatis in officiis, facilis ratione
-            excepturi unde delectus itaque eaque vitae voluptatem, sit nobis nostrum
-            consequuntur maxime pariatur, eligendi cupiditate. Quidem laborum, ut,
-            autem iusto corporis illum, nesciunt eos eligendi ipsum tempore expedita,
-            harum maxime.
+            I began learning web dev using FreeCodeCamp's curriculum; and one of
+            the very fist things they have you do is create a portfolio site
+            (this is their <a
+            href="https://codepen.io/FreeCodeCamp/pen/YqLyXB">example</a>).  I
+            passed up that assignment and finished nearly the entire curriculum
+            before putting much thought into making my own because I wanted to
+            know everything possible before I started it, I needed to have the
+            heavens open up in praise when I pushed it to production. And that's
+            how I ended up not having a portfolio for a year. Oops. One of the
+            most valuable things I've learned recently is the idea of  <a
+            href="http://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp">Minimum
+            Viable Product</a> instead of trying to perfect everything about a
+            project on the first pass. So here we are, warts and all (looking at
+            you (with great resentment) IE), but polish is doable.
           </p>
           <p className={classes.description}>
-            Quisquam eveniet adipisci cupiditate, in eum deleniti ex suscipit error
-            doloribus odio. Numquam voluptatibus fuga similique animi minima
-            consectetur omnis, tempore, itaque culpa. Facilis ipsa facere voluptatibus
-            enim voluptates nemo iste totam in iure sint inventore, esse voluptate
-            laboriosam velit, fugit, maxime possimus itaque quidem quibusdam odit
-            voluptas modi id!
+            At the end of this project I wanted to feel like I'd really wrapped
+            my head around all of the fundamental React tools, so I learned some
+            React Router and Redux then used the wonderful boilerplate <a
+            href="https://github.com/davezuko/react-redux-starter-kit#features">
+            React Redux Starter Kit</a> which had me learn some Koa, testing
+            tools, and CSS Modules besides.
           </p>
           <p className={classes.description}>
-            Esse quos optio voluptatibus voluptate nostrum reprehenderit earum
-            inventore. Ducimus voluptas maxime ipsum libero. Maiores aliquam, hic
-            ducimus libero non distinctio vero ex provident, alias omnis! Soluta
-            corporis, architecto voluptates quo beatae, facere, quasi eos laudantium
-            voluptatibus quibusdam veniam consequuntur tempora nostrum porro nulla
-            repudiandae quidem dolorem. Voluptates, molestiae, reprehenderit.
+            I also got to use Webpack with React Router to do some nifty (and
+            really functionally unecessary) code splitting so only the code
+            necessary to render a particular route is loaded, and all of the
+            rest is lazy loaded as you navigate. What's more I don't even need a live server to
+            do any of that, so I rigged up a way to build and push the whole
+            project to Github Pages with just one command! If you're looking
+            closely I know you're wondering why in the world I used a monospace
+            font all over the place. I actually manually flow the text in all of
+            those crazy animating blocks of text, and monospace fonts let me
+            keep a bit more sanity in that code.
           </p>
           <hr className={classes.stackRule} />
           <h2>Tools</h2>

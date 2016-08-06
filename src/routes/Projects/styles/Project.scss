@@ -30,7 +30,7 @@
 .imageWrap img {
   width: 100%;
 
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 5px rgba(white, .4);
 }
 
 .linksContainer {
@@ -72,7 +72,7 @@
   fill: white;
 }
 
-.description {
+.description, .description a {
   color: white;
   text-align: justify;
   line-height: 1.6;
