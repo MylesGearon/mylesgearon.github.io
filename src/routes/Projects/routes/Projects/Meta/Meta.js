@@ -89,39 +89,27 @@ export default class ScoreFluent extends React.Component {
           </div>
           <p className={classes.description}>
             I began learning web dev using FreeCodeCamp's curriculum; and one of
-            the very fist things they have you do is create a portfolio site
-            (this is their <a
+            the very fist things they have you do is create a portfolio site (<a
             href="https://codepen.io/FreeCodeCamp/pen/YqLyXB">example</a>).  I
             passed up that assignment and finished nearly the entire curriculum
             before putting much thought into making my own because I wanted to
             know everything possible before I started it, I needed to have the
             heavens open up in praise when I pushed it to production. And that's
             how I ended up not having a portfolio for a year. Oops. One of the
-            most valuable things I've learned recently is the idea of  <a
-            href="http://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp">Minimum
-            Viable Product</a> instead of trying to perfect everything about a
-            project on the first pass. So here we are, warts and all (looking at
-            you (with great resentment) IE), but polish is doable.
+            most valuable things I've learned recently is the idea of making
+            a Minimum Viable Product instead of trying to perfect everything
+            about a project on the first pass. So here we are, warts and all
+            (looking at you (with great resentment) IE), but I'm constantly
+            polishing.
           </p>
           <p className={classes.description}>
             At the end of this project I wanted to feel like I'd really wrapped
-            my head around all of the fundamental React tools, so I learned some
-            React Router and Redux then used the wonderful boilerplate <a
+            my head around all of the most common tools in the React workflow,
+            so I learned some React Router and Redux then used the wonderful
+            boilerplate <a
             href="https://github.com/davezuko/react-redux-starter-kit#features">
             React Redux Starter Kit</a> which had me learn some Koa, testing
             tools, and CSS Modules besides.
-          </p>
-          <p className={classes.description}>
-            I also got to use Webpack with React Router to do some nifty (and
-            really functionally unecessary) code splitting so only the code
-            necessary to render a particular route is loaded, and all of the
-            rest is lazy loaded as you navigate. What's more I don't even need a live server to
-            do any of that, so I rigged up a way to build and push the whole
-            project to Github Pages with just one command! If you're looking
-            closely I know you're wondering why in the world I used a monospace
-            font all over the place. I actually manually flow the text in all of
-            those crazy animating blocks of text, and monospace fonts let me
-            keep a bit more sanity in that code.
           </p>
           <hr className={classes.stackRule} />
           <h2>Tools</h2>
