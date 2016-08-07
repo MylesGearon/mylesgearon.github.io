@@ -117,7 +117,6 @@
     "react-imageloader": "^2.1.0",
     "react-inlinesvg": "^0.5.3",
     "react-redux": "^4.0.0",
-    "react-responsive": "^1.1.4",
     "react-router": "^2.2.0",
     "react-router-redux": "^4.0.0",
     "redux": "^3.0.0",

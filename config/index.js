@@ -54,8 +54,13 @@ const config = {
   },
   compiler_vendor : [
     'babel-polyfill',
+    'bowser',
     'history',
     'react',
+    'react-dom',
+    'react-addons-css-transition-group',
+    'react-inlinesvg',
+    'react-imageloader',
     'react-redux',
     'react-router',
     'react-router-redux',
