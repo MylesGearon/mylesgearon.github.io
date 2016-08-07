@@ -10,11 +10,11 @@ const titleAnimationDuration = 2000
 const paragraphs = [
   `I'm just a giant nerd who's constantly in awe of technology. I love the
   tangibility and craftsmanship of working on the web, so I'm looking for my
-  first apprenticeship or junior in web tech.`,
+  first apprenticeship or junior position in web tech.`,
 
   `My programming skills center around JavaScript, and I'm comfortable with
-  everything from fundamentals to tools like Node and MongoDB. And of course CSS
-  and HTML come with that. Most of my work is in the MERN stack, though I've
+  everything from fundamentals to tools like Node and MongoDB. And of course,
+  CSS and HTML come with that. Most of my work is in the MERN stack, though I've
   also dabbled in Python and Java in academic contexts, and I'm planning to pick
   up Ruby next. I'm always happy to adopt a new tool because at least half the
   reason I do web dev is because I get an inordinate amount of joy out of having

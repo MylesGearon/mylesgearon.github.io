@@ -88,7 +88,7 @@ export default class ScoreFluent extends React.Component {
             </a>
           </div>
           <p className={classes.description}>
-            I began learning web dev using FreeCodeCamp's curriculum; and one of
+            I began learning web dev using FreeCodeCamp's curriculum, and one of
             the very fist things they have you do is create a portfolio site (<a
             href="https://codepen.io/FreeCodeCamp/pen/YqLyXB">example</a>).  I
             passed up that assignment and finished nearly the entire curriculum

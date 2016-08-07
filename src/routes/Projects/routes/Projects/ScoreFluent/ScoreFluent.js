@@ -98,7 +98,7 @@ export default class ScoreFluent extends React.Component {
             fun at all).
           </p>
           <p className={classes.description}>
-            It's an extremely single page application, there's not a bit of
+            It's a literal single page application, there's not a bit of
             routing in it! The only calls to the Node server are for JWTs and
             JSON. I just love how magical it feels to login/logout without any
             kind of page refresh. The client uses React and regrettably the no

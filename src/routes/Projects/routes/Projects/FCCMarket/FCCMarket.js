@@ -92,9 +92,9 @@ export default class ScoreFluent extends React.Component {
             target="_blank">many</a> <a href="http://fcc-bars.herokuapp.com/"
             target="_blank">FreeCodeCamp</a> <a
             href="http://freecodecamp.com/mityadsch"
-            target="_blank">Projects</a> I've completed that I choose to show
-            here because it uses a bunch of interesting tools that I've not used
-            elsewhere like Socket.IO and Bootstrap. That's all.
+            target="_blank">Projects</a> I've completed. I choose to show it
+            here because it uses a bunch of interesting tools that I haven't
+            used elsewhere like Socket.IO and Bootstrap. That's all.
           </p>
           <hr className={classes.stackRule} />
           <h2>Tools</h2>

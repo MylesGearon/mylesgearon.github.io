@@ -105,15 +105,15 @@ export default class ScoreFluent extends React.Component {
           </p>
           <p className={classes.description}>
             Given those limitations, the only thing way I could imagine getting
-            up the site was by hosting it on Github Pages and using no tools
+            the site up was by hosting it on Github Pages and using no tools
             less common than jQuery. Since I couldn't expect them to keep a
             development environment set up I had to rely on Github to build the
             site, and Github only runs a rather small subset of what Jekyll can
             do. So, with my hands thusly tied, I plugged away with my hands
             until we realized that the updating process was still a bit too
-            technical to expect to hand off in a world filled with buses. So for
-            now it sits in stasis filled with lorem text. I'm still pretty proud
-            of how I worked with limitations.
+            technical to expect to hand off in a world filled with buses. So,
+            for now, it sits in stasis filled with lorem text. I'm still pretty
+            proud of how I worked with limitations.
           </p>
           <hr className={classes.stackRule} />
           <h2>Tools</h2>
