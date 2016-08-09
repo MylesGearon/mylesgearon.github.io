@@ -85,13 +85,18 @@ $logo-width: $logo-height*7/6;
 // React css transitions
 // ----------------------------------------------------------------------------
 
-.appear, .enter {
+.appear .logo {
   opacity: 0;
 }
 
-.appearActive {
+.appearActive .logo {
   opacity: 1;
-  transition: opacity 1s ease-in-out 0s;
+  transition: opacity 2s ease-in-out 0s;
+  animation: spinIn 2s forwards;
+}
+
+.enter {
+  opacity: 0;
 }
 
 .enterActive {
@@ -106,4 +111,20 @@ $logo-width: $logo-height*7/6;
 .leaveActive {
   opacity: 0;
   transition: opacity 250ms ease-in-out 0s;
+}
+
+// ----------------------------------------------------------------------------
+// Keyframes
+// ----------------------------------------------------------------------------
+
+@keyframes spinIn {
+  0% {
+    transform: rotate(-360*4deg);
+  },
+  70% {
+    transform: rotate(20deg);
+  },
+  100% {
+    transform: rotate(0);
+  }
 }

@@ -6,7 +6,7 @@ import RandomText from '../../../components/RandomText'
 import classes from '../HomeView.scss'
 
 const firstAnimationDuration = 2000
-const animationPause = 700
+const animationPause = 300
 const secondAnimationDuration = 2500
 
 const p = React.PropTypes

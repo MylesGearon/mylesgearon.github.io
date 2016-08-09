@@ -69,7 +69,7 @@ export default class Menu extends React.Component {
         leaveActive: lastClasses.leaveActive
       },
       transitionAppear: true,
-      transitionAppearTimeout: 1000,
+      transitionAppearTimeout: 2000,
       transitionEnterTimeout: 2000,
       transitionLeaveTimeout: lastClasses === pulldownClasses ? 500 : 1000
     }
