@@ -92,7 +92,8 @@ export default class AboutView extends React.Component {
             className={classes.title}
             width={titleSizes.width}
             fontHeight={titleSizes.fontHeight}
-            animationSpeed={1300}
+            animationSpeed={1200}
+            animationRandomness={.3}
             animationDuration={titleAnimationDuration}
             animate='in' />
 

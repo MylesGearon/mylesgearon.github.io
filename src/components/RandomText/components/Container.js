@@ -51,10 +51,6 @@ export default class TextContainer extends React.Component {
     )
   }
 
-  // componentDidUpdate () {
-  //   this.setState({updated: false})
-  // }
-
   // returns an array of chars w/ form [x, y, char]
   _mapCharPositions (props) {
     const fontWidth = props.fontHeight / 2
@@ -79,8 +75,8 @@ export default class TextContainer extends React.Component {
         }
       } else {
         chars.push([
-          col * fontWidth + margin * (col + 1),
-          Math.floor(i / charsPerRow) * props.fontHeight,
+          col * fontWidth + margin * (col + 1), // x
+          Math.floor(i / charsPerRow) * props.fontHeight, // y
           text[i]
         ])
       }
@@ -112,7 +108,7 @@ export default class TextContainer extends React.Component {
                 key={i}
                 animate={this.props.animate}
                 animationSpeed={this.props.animationSpeed}
-                animationRandomness={this.props.animationRandomness || 1}
+                animationRandomness={this.props.animationRandomness !== undefined ? this.props.animationRandomness : 1}
                 animationStart={
                   (this.props.animationDuration - this.props.animationSpeed) /
                   this.state.chars.length * i}
