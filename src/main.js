@@ -10,7 +10,6 @@ import AppContainer from './containers/AppContainer'
 // ========================================================
 // Alert if using outdated browser
 // ========================================================
-console.log(bowser)
 const unsupportedBrowserTests = [
   bowser.msie && bowser.version < 11,
   bowser.msie && bowser.mobile,
@@ -24,7 +23,7 @@ const unsupportedBrowserTests = [
 ]
 const unsupported = unsupportedBrowserTests.filter(test => test)
 if (unsupported.length != 0) {
-  alert(`Your browser is outdated, for a better experience here (and everywhere on the web), consider updating it and using Chrome or Firefox. http://outdatedbrowser.com/en`)
+  alert('Your browser is outdated, for a better experience here (and everywhere on the web), consider updating it and using Chrome or Firefox. http://outdatedbrowser.com/en')
 }
 
 // ========================================================
