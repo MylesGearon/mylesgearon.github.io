@@ -10,19 +10,18 @@ import AppContainer from './containers/AppContainer'
 // ========================================================
 // Alert if using outdated browser
 // ========================================================
-const unsupportedBrowserTests = [
-  bowser.msie && bowser.version < 11,
-  bowser.msie && bowser.mobile,
-  bowser.msedge && bowser.version < 13,
-  bowser.safari && bowser.version < 6,
-  bowser.opera && bowser.version < 15,
-  bowser.opera && bowser.mobile,
-  bowser.firefox && bowser.version < 35,
-  bowser.chrome && bowser.version < 26,
+const unsupportedBrowserTests = (
+  bowser.msie && bowser.version < 11 ||
+  bowser.msie && bowser.mobile ||
+  bowser.msedge && bowser.version < 13 ||
+  bowser.safari && bowser.version < 6 ||
+  bowser.opera && bowser.version < 15 ||
+  bowser.opera && bowser.mobile ||
+  bowser.firefox && bowser.version < 35 ||
+  bowser.chrome && bowser.version < 26 ||
   bowser.android && bowser.verson < 4.4
-]
-const unsupported = unsupportedBrowserTests.filter(test => test)
-if (unsupported.length != 0) {
+)
+if (unsupportedBrowserTests) {
   alert('Your browser is outdated, for a better experience here (and everywhere on the web), consider updating it and using Chrome or Firefox. http://outdatedbrowser.com/en')
 }
 
