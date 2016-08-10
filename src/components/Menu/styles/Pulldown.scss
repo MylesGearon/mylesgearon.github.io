@@ -119,10 +119,7 @@ $logo-width: $logo-height*7/6;
 
 @keyframes spinIn {
   0% {
-    transform: rotate(-360*4deg);
-  },
-  70% {
-    transform: rotate(20deg);
+    transform: rotate(90deg);
   },
   100% {
     transform: rotate(0);
