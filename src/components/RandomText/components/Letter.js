@@ -8,6 +8,8 @@ export default class Letter extends React.Component {
   static propTypes = {
     x: p.number.isRequired,
     y: p.number.isRequired,
+    i: p.number.isRequired,
+    textLen: p.number.isRequired,
     char: p.string.isRequired,
     fontHeight: p.number.isRequired,
     numKeyframes: p.number.isRequired,
@@ -84,6 +86,9 @@ export default class Letter extends React.Component {
     }
     const keyframe = Math.floor(Math.random() * this.props.numKeyframes + 1)
     const easingFunction = 'cubic-bezier(.85,0,.54,1)'
+    const proportionalPosition = this.props.i / this.props.textLen
+    const transitionDelay = proportionalPosition / 2 +
+                            Math.random() * proportionalPosition
     return (
       <div
         className={classes.letter}
@@ -94,9 +99,9 @@ export default class Letter extends React.Component {
           left: this.props.x,
           top: this.props.y,
           transition: `
-            top 1s ${easingFunction},
-            left 1s ${easingFunction},
-            font-size 1s ${easingFunction}
+            top 1s ${easingFunction} ${transitionDelay}s,
+            left 1s ${easingFunction} ${transitionDelay}s,
+            font-size 1s ${easingFunction} ${transitionDelay}s
           `,
           animation: this.state.animate
             ? `

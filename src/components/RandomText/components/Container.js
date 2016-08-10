@@ -94,8 +94,7 @@ export default class TextContainer extends React.Component {
           className={classes.container + ' ' + this.props.className}
           style={{
             height: this.state.numRows * this.props.fontHeight,
-            width: this.props.width,
-            transition: 'height cubic-bezier(.64,.23,.29,1.37) .8s, width cubic-bezier(.64,.23,.29,1.37) .8s'
+            width: this.props.width
           }}>
           {this.state.chars.map((char, i) => {
             return (
@@ -106,6 +105,8 @@ export default class TextContainer extends React.Component {
                 fontHeight={this.props.fontHeight}
                 numKeyframes={20}
                 key={i}
+                i={i}
+                textLen={this.props.text.length}
                 animate={this.props.animate}
                 animationSpeed={this.props.animationSpeed}
                 animationRandomness={this.props.animationRandomness !== undefined ? this.props.animationRandomness : 1}

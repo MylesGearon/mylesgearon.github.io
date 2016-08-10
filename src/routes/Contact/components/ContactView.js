@@ -92,7 +92,6 @@ export default class ContactView extends React.Component {
                   width={fontHeight / 2 * link.text.length}
                   animationSpeed={700}
                   animationDuration={1000}
-                  animationRandomness={0}
                   animate={(this.state.showContact[i] ? 'in' : 'out')} />
               </a>
             </div>
