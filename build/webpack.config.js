@@ -3,7 +3,6 @@ import cssnano from 'cssnano'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import Weinre from 'weinre-webpack'
-import ip from 'ip'
 import config from '../config'
 import _debug from 'debug'
 
@@ -95,7 +94,7 @@ if (__DEV__) {
     new webpack.NoErrorsPlugin(),
     new Weinre({
       runServer: true,
-      boundHost: ip.address(),
+      boundHost: config.server_host,
       httpPort: config.weinre_server_port
     })
   )
