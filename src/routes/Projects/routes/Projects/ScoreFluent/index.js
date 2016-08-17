@@ -1,16 +1,3 @@
-import { connect } from 'react-redux'
+import route from '../Template/indexTemplate'
 
-export default store => ({
-  path: 'score-fluent',
-  getComponent (nextState, cb) {
-    require.ensure([], require => {
-      const ScoreFluent = require('./ScoreFluent').default
-
-      const mapStateToProps = state => ({
-        curBreakpoint: state.breakpoint.current
-      })
-
-      cb(null, connect(mapStateToProps, {})(ScoreFluent))
-    })
-  }
-})
+export default route('ScoreFluent', 'score-fluent')

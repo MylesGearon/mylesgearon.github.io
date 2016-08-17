@@ -28,5 +28,5 @@ export default [
     path: 'fcc-market',
     title: 'FCC Stock Tracker',
     description: 'A Live Updating Stock Comparison Project'
-  },
+  }
 ]

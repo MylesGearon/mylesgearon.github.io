@@ -14,41 +14,38 @@ const p = React.PropTypes
 export default class ScoreFluent extends React.Component {
 
   static propTypes = {
-    curBreakpoint: p.oneOfType([p.number, p.object]).isRequired
+    // Redux props
+    curBreakpoint: p.oneOfType([p.number, p.object]).isRequired,
+
+    // Template props
+    title: p.string.isRequired,
+    titleSizesByBreakpoint: p.object.isRequired,
+    placeholderImg: p.string.isRequired,
+    img: p.string.isRequired,
+    demoUrl: p.string.isRequired,
+    demoText: p.string.isRequired,
+    githubUrl: p.string.isRequired,
+    descriptions: p.array.isRequired,
+    toolNames: p.array.isRequired
   }
 
   constructor () {
     super()
-    this.titleSizesByBreakpoint = {
-      0: {
-        fontHeight: 35
-      },
-      1: {
-        fontHeight: 40
-      },
-      2: {
-        fontHeight: 50
-      },
-      3: {
-        fontHeight: 60
-      },
-      4: {
-        fontHeight: 60
-      },
-      5: {
-        fontHeight: 60
-      }
-    }
+    this.titleSizesByBreakpoint = {}
+  }
+
+  componentWillMount () {
+    this.titleSizesByBreakpoint = this.props.titleSizesByBreakpoint
   }
 
   render () {
     // image loader refs
-    const placeholder = require('./assets/1-placeholder.png')
+    const placeholder = this.props.placeholderImg
     const preloader = () => <img src={placeholder} />
-    const img = require('./assets/1.png')
+    const img = this.props.img
 
     // title text sizing
-    const text = 'FCC Market'
+    const text = this.props.title
     const randomTextFontHeight = this.titleSizesByBreakpoint[this.props.curBreakpoint].fontHeight
     const randomTextWidth = randomTextFontHeight / 2 * text.length
 
@@ -71,14 +68,14 @@ export default class ScoreFluent extends React.Component {
           <div className={classes.linksContainer}>
             <a
               className={classes.siteLink}
-              href='http://fcc-market.herokuapp.com'
+              href={this.props.demoUrl}
               target='_blank'>
-              fcc-market.herokuapp.com
+              {this.props.demoText}
             </a>
             |
             <a
               className={classes.githubLogoContainer}
-              href='http://github.com/mityadsch/fcc-market'
+              href={this.props.githubUrl}
               target='_blank'>
               <Isvg
                 src={GithubLogo}
@@ -87,26 +84,20 @@ export default class ScoreFluent extends React.Component {
               </Isvg>
             </a>
           </div>
-          <p className={classes.description}>
-            This is one of <a href="http://fcc-bars.herokuapp.com/"
-            target="_blank">many</a> <a href="http://fcc-bars.herokuapp.com/"
-            target="_blank">FreeCodeCamp</a> <a
-            href="http://freecodecamp.com/mityadsch"
-            target="_blank">Projects</a> I've completed. I choose to show it
-            here because it uses a bunch of interesting tools that I haven't
-            used elsewhere like Socket.IO and Bootstrap. That's all.
-          </p>
+          {this.props.descriptions.map((text, i) =>
+            <p
+              key={i}
+              className={classes.description}
+              dangerouslySetInnerHTML={{__html: text}} />
+          )}
+
           <hr className={classes.stackRule} />
           <h2>Tools</h2>
           <div className={classes.stackContainer}>
-            <Tool icon='jquery' show />
-            <Tool icon='react' show />
-            <Tool icon='socketio' show />
-            <Tool icon='heroku' show />
-            <Tool icon='mongodb' show />
-            <Tool icon='node' show />
-            <Tool icon='d3' show />
-            <Tool icon='bootstrap' show />
+            {this.props.toolNames.map((name, i) => {
+              if (typeof name === 'string') return <Tool key={i} icon={name} show />
+              return <Tool key={i} isSvg={false} icon={name[0]} show />
+            })}
           </div>
         </div>
       </View>

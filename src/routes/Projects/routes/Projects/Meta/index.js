@@ -1,16 +1,3 @@
-import { connect } from 'react-redux'
+import route from '../Template/indexTemplate'
 
-export default store => ({
-  path: 'meta',
-  getComponent (nextState, cb) {
-    require.ensure([], require => {
-      const Meta = require('./Meta').default
-
-      const mapStateToProps = state => ({
-        curBreakpoint: state.breakpoint.current
-      })
-
-      cb(null, connect(mapStateToProps, {})(Meta))
-    })
-  }
-})
+export default route('Meta', 'meta')
