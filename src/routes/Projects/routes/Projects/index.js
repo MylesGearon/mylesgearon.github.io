@@ -17,12 +17,12 @@ export default [
     title: 'Ouding Consulting',
     description: 'A Static Site for Ouding Legal Nurse Consulting'
   },
-  {
-    dirname: 'TheLearningCenter',
-    path: 'the-learning-center',
-    title: 'The Learning Center',
-    description: 'A Static Site for an Adult Eduction Nonprofit'
-  },
+  // {
+  //   dirname: 'TheLearningCenter',
+  //   path: 'the-learning-center',
+  //   title: 'The Learning Center',
+  //   description: 'A Static Site for an Adult Eduction Nonprofit'
+  // },
   {
     dirname: 'FCCMarket',
     path: 'fcc-market',
