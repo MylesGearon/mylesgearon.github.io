@@ -1,3 +1,4 @@
+import bowser from 'bowser'
 import React from 'react'
 const p = React.PropTypes
 
@@ -18,7 +19,8 @@ export default class TextContainer extends React.Component {
     animationRandomness: p.number,
     // Total animation duration (not counting randomness factor)
     animationDuration: p.number.isRequired,
-    animate: p.oneOf(['in', 'out'])
+    animate: p.oneOf(['in', 'out']),
+    homePage: p.boolean
   }
 
   constructor () {
@@ -88,6 +90,17 @@ export default class TextContainer extends React.Component {
   render () {
     if (this.state.chars == null) {
       return null
+    } else if (bowser.ios && !this.props.homePage) { // There's a terrible rendering bug in ios for some reason :/
+      return (
+        <div
+          className={classes.container + ' ' + this.props.className}
+          style={{
+            height: 'auto',
+            width: this.props.width,
+            fontSize: this.props.fontHeight,
+            color: 'white'
+          }}>{this.props.text}</div>
+        )
     } else {
       return (
         <div

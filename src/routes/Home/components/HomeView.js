@@ -125,7 +125,8 @@ export default class HomeView extends React.Component {
             animationRandomness={.5}
             animationSpeed={1200}
             animationDuration={firstAnimationDuration}
-            animate='in' />
+            animate='in'
+            homePage />
           <br />
           <RandomText
             text="I'm a Chicago-Based Fullstack Web Dev."
@@ -134,7 +135,8 @@ export default class HomeView extends React.Component {
             animationSpeed={600}
             animationRandomness={0.5}
             animationDuration={secondAnimationDuration}
-            animate={this.state.animateDescription} />
+            animate={this.state.animateDescription}
+            homePage />
         </div>
       </View>
     )
