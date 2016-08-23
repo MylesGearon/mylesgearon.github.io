@@ -20,7 +20,7 @@ export default class TextContainer extends React.Component {
     // Total animation duration (not counting randomness factor)
     animationDuration: p.number.isRequired,
     animate: p.oneOf(['in', 'out']),
-    homePage: p.boolean
+    homePage: p.bool
   }
 
   constructor () {
