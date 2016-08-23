@@ -92,7 +92,7 @@ $logo-width: $logo-height*7/6;
 .appearActive .logo {
   opacity: 1;
   transition: opacity 2s ease-in-out 0s;
-  animation: spinIn 2s forwards;
+  animation: fadeIn 2s forwards;
 }
 
 .enter {
@@ -117,11 +117,11 @@ $logo-width: $logo-height*7/6;
 // Keyframes
 // ----------------------------------------------------------------------------
 
-@keyframes spinIn {
+@keyframes fadeIn {
   0% {
-    transform: rotate(90deg);
+    transform: translateY(50px);
   },
   100% {
-    transform: rotate(0);
+    transform: translateY(0);
   }
 }
