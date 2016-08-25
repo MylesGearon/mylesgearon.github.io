@@ -9,7 +9,6 @@
 }
 
 .projectContainer {
-  height: 225px;
   width: 300px;
 
   box-sizing: content-box;
@@ -19,7 +18,7 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   opacity: 0;
@@ -28,13 +27,18 @@
 
   text-decoration: none;
 
+  .title, hr, .description {
+    margin: 5px 0;
+  }
+
   hr {
     color: white;
   }
 
   img, span {
     width: 100%;
-    max-width: 225px;
+    min-width: 260px;
+    line-height: 0;
   }
 
   img {
@@ -60,7 +64,6 @@
 
 @media screen and (min-width: $breakpoint-1) {
   .projectContainer {
-    height: 250px;
 
     img, span {
       max-width: none;
@@ -77,17 +80,12 @@
   }
 
   .projectContainer {
-    height: 280px;
     width: 350px;
   }
 
 }
 
 @media screen and (min-width: $breakpoint-3) {
-
-  .projectContainer {
-    height: 310px;
-  }
 
   .description {
     font-size: 18px;

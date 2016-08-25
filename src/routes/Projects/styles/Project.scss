@@ -19,6 +19,10 @@
   color: white;
 }
 
+p {
+  font-size: 18px;
+}
+
 .title {
   margin: 20px;
 }
@@ -32,6 +36,11 @@
 
   box-shadow: 0 0 5px rgba(white, .4);
 }
+
+.siteLink {
+  font-size: 16px;
+}
+
 
 .linksContainer {
   height: 40px;
@@ -59,7 +68,7 @@
 
 .githubLogoContainer, .githubLogoContainer svg {
   height: 30px;
-  width: auto;
+  width: 30px;
 
   border-radius: 50%;
   transition: box-shadow .5s;
@@ -117,8 +126,8 @@
     margin: 40px 0 30px;
   }
 
-  .siteLink {
-    font-size: 18px;
+  .siteLink, p {
+    font-size: 20px;
   }
 
   .githubLogoContainer, .githubLogoContainer svg {

@@ -63,8 +63,7 @@ export default class ProjectsList extends React.Component {
                 animationDuration={1500}
                 animate={(this.state.showProject[ind] ? 'in' : 'out')} />
               <hr style={{
-                width: randomTextWidth,
-                transform: `translateY(${randomTextFontHeight / 2}px)`
+                width: randomTextWidth
               }} />
               <p className={classes.description}>{project.description}</p>
             </Link>

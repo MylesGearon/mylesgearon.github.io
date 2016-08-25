@@ -123,6 +123,9 @@ export default class TextContainer extends React.Component {
           style={{
             height: 'auto',
             width: this.props.width,
+            textAlign: 'center',
+            fontFamily: 'Inconsolata, monospace',
+            lineHeight: '1',
             fontSize: this.props.fontHeight,
             color: 'white'
           }}>{this.props.text}</div>
