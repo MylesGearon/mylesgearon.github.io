@@ -35,7 +35,7 @@ const config = {
   // Server Configuration
   // ----------------------------------
   server_host : localip,
-  server_port : process.env.PORT || 3000,
+  server_port : process.env.PORT || 4000,
   weinre_server_port: 3002,
 
   // ----------------------------------
