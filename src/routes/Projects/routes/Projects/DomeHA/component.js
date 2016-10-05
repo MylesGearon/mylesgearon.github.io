@@ -2,16 +2,16 @@ export default {
   title: 'Dome Home Automation',
   titleSizesByBreakpoint: {
     0: {
-      fontHeight: 35
+      fontHeight: 25
     },
     1: {
-      fontHeight: 40
+      fontHeight: 30
     },
     2: {
-      fontHeight: 50
+      fontHeight: 40
     },
     3: {
-      fontHeight: 60
+      fontHeight: 55
     },
     4: {
       fontHeight: 60
