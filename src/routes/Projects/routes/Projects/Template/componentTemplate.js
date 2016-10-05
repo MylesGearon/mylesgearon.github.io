@@ -24,7 +24,7 @@ export default class ScoreFluent extends React.Component {
     img: p.string.isRequired,
     demoUrl: p.string.isRequired,
     demoText: p.string.isRequired,
-    githubUrl: p.string.isRequired,
+    githubUrl: p.string,
     descriptions: p.array.isRequired,
     toolNames: p.array.isRequired
   }
@@ -72,17 +72,19 @@ export default class ScoreFluent extends React.Component {
               target='_blank'>
               {this.props.demoText}
             </a>
-            |
-            <a
-              className={classes.githubLogoContainer}
-              href={this.props.githubUrl}
-              target='_blank'>
-              <Isvg
-                src={GithubLogo}
-                wrapper={React.DOM.div}>
-                Github Logo
-              </Isvg>
-            </a>
+            {this.props.githubUrl ? '|' : null }
+            {this.props.githubUrl ?
+              <a
+                className={classes.githubLogoContainer}
+                href={this.props.githubUrl}
+                target='_blank'>
+                <Isvg
+                  src={GithubLogo}
+                  wrapper={React.DOM.div}>
+                  Github Logo
+                </Isvg>
+              </a>
+            : null }
           </div>
           {this.props.descriptions.map((text, i) =>
             <p
