@@ -1,5 +1,11 @@
 export default [
   {
+    dirname: 'DomeHA',
+    path: 'dome-ha',
+    title: 'Dome',
+    description: 'A e-commerce site for IOT products'
+  },
+  {
     dirname: 'Meta',
     path: 'meta',
     title: 'mylesgearon.com',
@@ -17,12 +23,12 @@ export default [
     title: 'Ouding Consulting',
     description: 'A Static Site for Ouding Legal Nurse Consulting'
   },
-  // {
-  //   dirname: 'TheLearningCenter',
-  //   path: 'the-learning-center',
-  //   title: 'The Learning Center',
-  //   description: 'A Static Site for an Adult Eduction Nonprofit'
-  // },
+  {
+    dirname: 'TheLearningCenter',
+    path: 'the-learning-center',
+    title: 'The Learning Center',
+    description: 'A Static Site for an Adult Eduction Nonprofit'
+  },
   {
     dirname: 'FCCMarket',
     path: 'fcc-market',

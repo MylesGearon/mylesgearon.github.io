@@ -20,7 +20,7 @@ export default {
       fontHeight: 60
     }
   },
-  placeholderImg: require('./assets/1-placeholder.png'),
+  placeholderImg: require('./assets/1.png'),
   img: require('./assets/1.png'),
   demoUrl: 'http://fcc-market.herokuapp.com',
   demoText: 'fcc-market.herokuapp.com',
