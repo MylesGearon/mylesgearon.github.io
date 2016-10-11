@@ -9,6 +9,7 @@ export default class TextContainer extends React.Component {
 
   static propTypes = {
     text: p.string.isRequired,
+    tagType: p.string,
     className: p.string,
     width: p.number.isRequired,
     // Sets font-size
@@ -114,11 +115,12 @@ export default class TextContainer extends React.Component {
   }
 
   render () {
+    const tagType = this.props.tagType || 'div'
     if (this.state.chars == null) {
       return null
     } else if (bowser.ios && !this.props.homePage) { // There's a terrible rendering bug in ios for some reason :/
       return (
-        <div
+        <tagType
           className={classes.container + ' ' + this.props.className}
           style={{
             height: 'auto',
@@ -128,7 +130,7 @@ export default class TextContainer extends React.Component {
             lineHeight: '1',
             fontSize: this.props.fontHeight,
             color: 'white'
-          }}>{this.props.text}</div>
+          }}>{this.props.text}</tagType>
         )
     } else {
       return (

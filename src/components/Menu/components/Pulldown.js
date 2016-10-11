@@ -52,14 +52,14 @@ export default class Pulldown extends React.Component {
       }
     ]
     return (
-      <div
+      <nav
+        role='navigation'
         onClick={this._toggleMenu.bind(this)}
         className={classes.container}>
         <Isvg
           src={EmbeddingLogo}
-          wrapper={React.DOM.div}
+          wrapper={React.DOM.a}
           className={classes.logo}>
-          {/* Fallback link */}
           <img
             alt='Myles Gearon Logo'
             src={FallbackLogo} />
@@ -78,6 +78,7 @@ export default class Pulldown extends React.Component {
               activeClassName={classes.activeRoute}>
               <RandomText
                 text={link.text}
+                tagType='a'
                 fontHeight={fontHeight}
                 width={link.text.length * fontHeight / 2}
                 animationSpeed={1000}
@@ -86,12 +87,13 @@ export default class Pulldown extends React.Component {
             </link.type>
           ))}
         </div>
-      </div>
+      </nav>
     )
   }
 
   _toggleMenu (e) {
-    if (e.target.tagName === 'svg' && !this.state.animating) {
+    const tagName = e.target.tagName.toLowerCase()
+    if ((tagName == 'a' || tagName == 'svg') && !this.state.animating) {
       if (this.props.expanded) {
         this.props.closeMenu()
       } else {

@@ -41,7 +41,7 @@ export default class CoreLayout extends React.Component {
   render () {
     return (
       <div className={classes.background}>
-        <div className={classes.viewContainer || 'view-container'}>
+        <main className={classes.viewContainer || 'view-container'}>
           <TransitionGroup
             transitionName={{
               enter: classes.enter,
@@ -55,7 +55,7 @@ export default class CoreLayout extends React.Component {
               {key: this.props.router.locationBeforeTransitions.pathname}
             )}
           </TransitionGroup>
-        </div>
+        </main>
         <Menu {...this.props} />
       </div>
     )

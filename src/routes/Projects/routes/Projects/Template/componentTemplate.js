@@ -51,7 +51,7 @@ export default class ScoreFluent extends React.Component {
 
     return (
       <View className={classes.mainContainer}>
-        <div className={classes.projectContainer}>
+        <article className={classes.projectContainer}>
           <RandomText
             text={text}
             className={classes.title}
@@ -101,7 +101,7 @@ export default class ScoreFluent extends React.Component {
               return <Tool key={i} isSvg={false} icon={name[0]} show />
             })}
           </div>
-        </div>
+        </article>
       </View>
     )
   }

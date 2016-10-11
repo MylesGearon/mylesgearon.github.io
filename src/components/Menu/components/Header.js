@@ -28,21 +28,23 @@ export default class Header extends React.Component {
       this.props.path.indexOf(route) !== -1
     ).length > 0
     return (
-      <div
+      <header
         className={classes.header +
           (scrollable ? ' ' + classes.scrollable : '')}>
         <IndexLink to='/'
           className={classes.headerLink}
           activeClassName={classes.activeRoute}>
-          <Isvg
-            src={EmbeddingLogo}
-            wrapper={React.DOM.div}
-            className={classes.logoContainer}>
-            {/* Fallback link */}
-            <img
-              alt='Myles Gearon Logo'
-              src={FallbackLogo} />
-          </Isvg>
+          <nav role='navigation'>
+            <Isvg
+              src={EmbeddingLogo}
+              wrapper={React.DOM.div}
+              className={classes.logoContainer}>
+              {/* Fallback link */}
+              <img
+                alt='Myles Gearon Logo'
+                src={FallbackLogo} />
+            </Isvg>
+          </nav>
         </IndexLink>
         <Link
           to='/about'
@@ -62,7 +64,7 @@ export default class Header extends React.Component {
           activeClassName={classes.activeRoute}>
           Contact
         </Link>
-      </div>
+      </header>
     )
   }
 }

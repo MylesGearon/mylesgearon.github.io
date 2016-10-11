@@ -86,7 +86,7 @@ export default class AboutView extends React.Component {
     const titleSizes = this.sizesByBreakpoint[this.props.curBreakpoint]
     return (
       <View className={classes.container}>
-        <div className={classes.textContainer}>
+        <article className={classes.textContainer}>
           <RandomText
             text='About Me'
             className={classes.title}
@@ -104,7 +104,7 @@ export default class AboutView extends React.Component {
               {paragraphs[i]}
             </p>
           ))}
-        </div>
+        </article>
       </View>
     )
   }

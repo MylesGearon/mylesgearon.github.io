@@ -77,7 +77,7 @@ export default class ContactView extends React.Component {
     const fontHeight = this.sizesByBreakpoint[this.props.curBreakpoint].fontHeight
     return (
       <View className={classes.container}>
-        <div className={classes.linkContainer}>
+        <article className={classes.linkContainer}>
           {links.map((link, i) => (
             <div
               className={
@@ -96,7 +96,7 @@ export default class ContactView extends React.Component {
               </a>
             </div>
           ))}
-        </div>
+        </article>
       </View>
     )
   }
