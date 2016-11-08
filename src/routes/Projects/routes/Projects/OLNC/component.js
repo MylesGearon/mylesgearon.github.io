@@ -33,5 +33,5 @@ export default {
     to do that well.`
   ],
 
-  toolNames: ['jquery', 'grunt']
+  toolNames: ['jquery', 'grunt', 'google-analytics']
 }

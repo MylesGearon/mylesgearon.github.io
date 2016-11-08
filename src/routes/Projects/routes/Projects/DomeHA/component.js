@@ -41,6 +41,7 @@ export default {
     'jquery',
     'foundation',
     'shopify',
-    'sass'
+    'sass',
+    'mixpanel'
   ]
 }

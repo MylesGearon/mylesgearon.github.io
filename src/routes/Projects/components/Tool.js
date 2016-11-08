@@ -39,7 +39,7 @@ export default class Tool extends React.Component {
         }
 
         <p className={classes.title}>
-          {this.props.icon}
+          {this.props.icon.split('-').join(' ')}
         </p>
 
       </div>
