@@ -18,8 +18,8 @@
     "dev:no-debug": "npm run dev -- --no_debug",
     "test": "better-npm-run test",
     "test:dev": "npm run test -- --watch",
+    "build": "better-npm-run build",
     "deploy": "better-npm-run deploy",
-    "deploy:prod": "better-npm-run deploy:prod",
     "codecov": "cat coverage/*/lcov.info | codecov",
     "pushdist": "cd dist && git add --all && git commit -m \"Release at $(date)\" && git push"
   },
@@ -37,14 +37,14 @@
         "DEBUG": "app:*"
       }
     },
-    "deploy": {
+    "build": {
       "command": "npm run clean && npm run compile",
       "env": {
         "NODE_ENV": "production",
         "DEBUG": "app:*"
       }
     },
-    "deploy:prod": {
+    "deploy": {
       "command": "npm run deploy && npm run pushdist",
       "env": {
         "NODE_ENV": "production",
@@ -134,6 +134,7 @@
     "chai-enzyme": "^0.5.0",
     "cheerio": "^0.20.0",
     "codecov": "^1.0.1",
+    "copy-webpack-plugin": "^4.0.0",
     "enzyme": "^2.0.0",
     "eslint": "^3.0.1",
     "eslint-config-standard": "^5.1.0",
