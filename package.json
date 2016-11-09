@@ -45,7 +45,7 @@
       }
     },
     "deploy": {
-      "command": "npm run deploy && npm run pushdist",
+      "command": "npm run build && npm run pushdist",
       "env": {
         "NODE_ENV": "production",
         "DEBUG": "app:*"

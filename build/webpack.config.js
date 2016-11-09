@@ -1,7 +1,6 @@
 import webpack from 'webpack'
 import cssnano from 'cssnano'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import CopyWebpackPlugin from 'copy-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import Weinre from 'weinre-webpack'
 import config from '../config'
@@ -71,7 +70,7 @@ webpackConfig.plugins = [
   })
 ]
 
-// Generate index.html in folder to enable each route
+// Generate index.html for each route
 config.routes.forEach(route => {
   console.log(route)
   webpackConfig.plugins.push(
@@ -113,10 +112,7 @@ if (__DEV__) {
         dead_code: true,
         warnings: false
       }
-    }),
-    new CopyWebpackPlugin([
-      {from: '.nojekyll', to: 'dist/.nojekyll'}
-    ])
+    })
   )
 }
 
