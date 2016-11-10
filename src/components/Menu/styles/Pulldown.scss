@@ -119,9 +119,11 @@ $logo-width: $logo-height*7/6;
 
 @keyframes fadeIn {
   0% {
+    filter: blur(7px);
     transform: translateY(50px);
   },
   100% {
+    filter: none;
     transform: translateY(0);
   }
 }
