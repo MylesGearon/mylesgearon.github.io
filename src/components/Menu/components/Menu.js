@@ -88,4 +88,3 @@ export default class Menu extends React.Component {
 
 }
 
-export default Menu
