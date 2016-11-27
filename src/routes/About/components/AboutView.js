@@ -8,7 +8,7 @@ const p = React.PropTypes
 
 const titleAnimationDuration = 2000
 const paragraphs = [
-  `I'm a giant nerd currently working in software dev for Gaslight and ComputerEase in Cincinnati.',
+  `I'm a giant nerd currently working in software dev for Gaslight and ComputerEase in Cincinnati.`,
 
   `My programming skills center around JavaScript, and I'm comfortable with
   everything from fundamentals to tools like Node and MongoDB. And of course,
