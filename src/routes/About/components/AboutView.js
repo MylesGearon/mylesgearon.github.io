@@ -8,9 +8,7 @@ const p = React.PropTypes
 
 const titleAnimationDuration = 2000
 const paragraphs = [
-  `I'm just a giant nerd who's constantly in awe of technology. I love the
-  tangibility and craftsmanship of working on the web, so I'm looking for my
-  first apprenticeship or junior position in web tech.`,
+  `I'm a giant nerd currently working in software dev for Gaslight and ComputerEase in Cincinnati.',
 
   `My programming skills center around JavaScript, and I'm comfortable with
   everything from fundamentals to tools like Node and MongoDB. And of course,
@@ -21,8 +19,8 @@ const paragraphs = [
   a shiny new technology to play with.`,
 
   `When I'm not sitting in front of a screen I sink most of my time into
-  generalist nerdery, becoming a less awful pianist/baritone/cellist, tutoring
-  STEM topics, or getting very - often tragically - ambitious with an oven.`
+  general nerdery around computers and philosophy, practicing cello/piano/singing, tutoring
+  STEM topics, or getting overly ambitious in the kitchen.`
 ]
 
 export default class AboutView extends React.Component {
