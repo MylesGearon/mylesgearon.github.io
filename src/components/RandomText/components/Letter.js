@@ -86,6 +86,7 @@ export default class Letter extends React.Component {
     }
     const keyframe = Math.floor(Math.random() * this.props.numKeyframes + 1)
     const easingFunction = 'cubic-bezier(.85,0,.54,1)'
+    // const easingFunction = `cubic-bezier(${Math.random()*.8 + +.1},0,${Math.random()*.5 + .25},1)`
     const proportionalPosition = this.props.i / this.props.textLen
     const transitionDelay = proportionalPosition / 2 +
                             Math.random() * proportionalPosition
