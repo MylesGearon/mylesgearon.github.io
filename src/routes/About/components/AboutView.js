@@ -8,19 +8,19 @@ const p = React.PropTypes
 
 const titleAnimationDuration = 2000
 const paragraphs = [
-  `I'm a giant nerd currently working in software dev for Gaslight and ComputerEase in Cincinnati.`,
+  `I'm a giant nerd currently working as an apprentice developer for Gaslight and ComputerEase in Cincinnati.`,
 
-  `My programming skills center around JavaScript, and I'm comfortable with
-  everything from fundamentals to tools like Node and MongoDB. And of course,
-  CSS and HTML come with that. Most of my work is in the MERN stack, though I've
-  also dabbled in Python and Java in academic contexts, and I'm planning to pick
-  up Ruby next. I'm always happy to adopt a new tool because at least half the
-  reason I do web dev is because I get an inordinate amount of joy out of having
-  a shiny new technology to play with.`,
+  `My programming skills center around JavaScript and Rails. I've now worked on
+  projects from static sites, to ecommerce, to greenfielding a sizable react app.
+  Most of my work has been Node, React, and RoR focused, though I've also dabbled
+  in Python and Java in academic contexts, and I'm planning to pick up some 
+  functional skills next. I'm always happy to adopt a new tool because at least half 
+  the reason I got into development is because I get an inordinate amount of joy out 
+  of having a shiny new technology to play with.`,
 
   `When I'm not sitting in front of a screen I sink most of my time into
-  general nerdery around computers and philosophy, practicing cello/piano/singing, tutoring
-  STEM topics, or getting overly ambitious in the kitchen.`
+  general nerdery around computers and philosophy, practicing cello/piano/singing, 
+  tutoring STEM topics, or getting tragically ambitious in the kitchen.`
 ]
 
 export default class AboutView extends React.Component {

@@ -94,7 +94,7 @@ export default class HomeView extends React.Component {
     this.timeouts.push(setTimeout(() => {
       this.setState({animateDescription: 'in'})
     }, firstAnimationDuration))
-    // Animate inmenu
+    // Animate in menu
     this.timeouts.push(setTimeout(() => {
       if (!this.props.menuVisible) this.props.animateInMenu()
     }, firstAnimationDuration + secondAnimationDuration + 500))
@@ -129,7 +129,7 @@ export default class HomeView extends React.Component {
             homePage />
           <br />
           <RandomText
-            text="I'm a Chicago-Based Fullstack Web Dev."
+            text="I'm a Fullstack Web Dev from Chicago."
             width={subtitleSizes.width}
             fontHeight={subtitleSizes.fontHeight}
             animationSpeed={600}
