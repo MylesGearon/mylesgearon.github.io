@@ -78,7 +78,6 @@ $logo-width: $logo-height*7/6;
       transform: none;
     }
   }
-
 }
 
 // ----------------------------------------------------------------------------
@@ -119,11 +118,9 @@ $logo-width: $logo-height*7/6;
 
 @keyframes fadeIn {
   0% {
-    filter: blur(7px);
-    transform: translateY(50px);
+    transform: translateX(-50px);
   },
   100% {
-    filter: none;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }

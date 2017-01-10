@@ -23,7 +23,7 @@ export default class Pulldown extends React.Component {
     this.state = {
       animating: false
     }
-    this.animationDuration = 2000
+    this.animationDuration = 3000
     this.timeouts = []
   }
 
