@@ -19,7 +19,7 @@
     "test": "better-npm-run test",
     "test:dev": "npm run test -- --watch",
     "build": "better-npm-run build",
-    "predeploy": "better-npm-run predeploy",
+    "deploy:setup": "better-npm-run predeploy",
     "deploy": "better-npm-run deploy",
     "codecov": "cat coverage/*/lcov.info | codecov",
     "pushdist": "cd dist && git add --all && git commit -m \"Release at $(date)\" && git push"
@@ -45,8 +45,12 @@
         "DEBUG": "app:*"
       }
     },
-    "predeploy": {
-      "command": "mkdir dist && cd dist && git init && git remote add origin git@github.com:MityaDSCH/MityaDSCH.github.io.git && git pull origin master && cd .."
+    "deploy:setup": {
+      "command": "rm -rf dist && mkdir dist && cd dist && git init && git remote add origin git@github.com:MityaDSCH/MityaDSCH.github.io.git && git pull origin master && git push --set-upstream origin master && cd ..",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "app:*"
+      }
     },
     "deploy": {
       "command": "npm run build && npm run pushdist",
