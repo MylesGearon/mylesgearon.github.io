@@ -19,7 +19,7 @@
     "test": "better-npm-run test",
     "test:dev": "npm run test -- --watch",
     "build": "better-npm-run build",
-    "deploy:setup": "better-npm-run predeploy",
+    "deploy:setup": "better-npm-run deploy:setup",
     "deploy": "better-npm-run deploy",
     "codecov": "cat coverage/*/lcov.info | codecov",
     "pushdist": "cd dist && git add --all && git commit -m \"Release at $(date)\" && git push"
