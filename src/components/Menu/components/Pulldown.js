@@ -1,12 +1,8 @@
 import React from 'react'
-import Isvg from 'react-inlinesvg'
 import RandomText from '../../RandomText'
 import { IndexLink, Link } from 'react-router'
 
 import classes from '../styles/Pulldown.scss'
-
-import EmbeddingLogo from '../assets/embeddingLogo.svg'
-import FallbackLogo from '../assets/logo.svg'
 
 const p = React.PropTypes
 
@@ -18,13 +14,14 @@ export default class Pulldown extends React.Component {
     expanded: p.bool.isRequired
   }
 
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       animating: false
     }
-    this.animationDuration = 3000
+    this.animationDuration = 1000
     this.timeouts = []
+    setTimeout(() => props.expandMenu(), 0)
   }
 
   componentWillUnmount () {
@@ -54,16 +51,7 @@ export default class Pulldown extends React.Component {
     return (
       <nav
         role='navigation'
-        onClick={this._toggleMenu.bind(this)}
         className={classes.container}>
-        <Isvg
-          src={EmbeddingLogo}
-          wrapper={React.DOM.a}
-          className={classes.logo}>
-          <img
-            alt='Myles Gearon Logo'
-            src={FallbackLogo} />
-        </Isvg>
         <div
           className={classes.linkContainer + (this.props.expanded ? ' ' + classes.active : '')}
           style={{
@@ -89,18 +77,5 @@ export default class Pulldown extends React.Component {
         </div>
       </nav>
     )
-  }
-
-  _toggleMenu (e) {
-    const tagName = e.target.tagName.toLowerCase()
-    if ((tagName == 'a' || tagName == 'svg') && !this.state.animating) {
-      if (this.props.expanded) {
-        this.props.closeMenu()
-      } else {
-        this.props.expandMenu()
-      }
-      this.setState({animating: true})
-      this.timeouts.push(setTimeout(() => this.setState({animating: false}), this.animationDuration))
-    }
   }
 }
