@@ -1,4 +1,6 @@
 * Add slideshow to projects page
-* Add attention-seeker to menu after delay
-* Fix resize event bug
+* Remove the menu open/close
+* Migrate to Gatsby
+* Migrate projects page to timeline format?
+* Allow projects filter by technology?
 
