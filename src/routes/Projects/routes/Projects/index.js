@@ -1,5 +1,17 @@
 export default [
   {
+    dirname: 'Apple',
+    path: 'apple',
+    title: 'Apple',
+    description: 'Internal Software at Apple'
+  },
+  {
+    dirname: 'JobBooks',
+    path: 'jobbooks',
+    title: 'JobBooks',
+    description: 'A SaaS Construction Accounting Package'
+  },
+  {
     dirname: 'DomeHA',
     path: 'dome-ha',
     title: 'Dome',

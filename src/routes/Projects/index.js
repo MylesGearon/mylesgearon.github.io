@@ -7,6 +7,8 @@ export default store => ({
   getChildRoutes (location, cb) {
     require.ensure([], require => {
       cb(null, [
+        require('./routes/Projects/Apple').default(store),
+        require('./routes/Projects/JobBooks').default(store),
         require('./routes/Projects/DomeHA').default(store),
         require('./routes/Projects/Meta').default(store),
         require('./routes/Projects/ScoreFluent').default(store),
