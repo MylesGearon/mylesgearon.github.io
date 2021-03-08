@@ -17,12 +17,12 @@ export default [
     title: 'Dome',
     description: 'A e-commerce site for IOT products'
   },
-  {
-    dirname: 'Meta',
-    path: 'meta',
-    title: 'mylesgearon.com',
-    description: 'An Overwrought SPA Portfolio'
-  },
+  // {
+  //   dirname: 'Meta',
+  //   path: 'meta',
+  //   title: 'mylesgearon.com',
+  //   description: 'An Overwrought SPA Portfolio'
+  // },
   // {
   //   dirname: 'ScoreFluent',
   //   path: 'score-fluent',

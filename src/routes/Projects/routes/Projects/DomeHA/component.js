@@ -28,12 +28,8 @@ export default {
 
   descriptions: [
     `
-      I was hired as an independent contractor to write most of the custom
-      code on the launch website for the IOT startup Dome. In addition
-      to writing HTML/(S)CSS/JS, I planned out and implemented all of
-      the schemas that power the CMS. In fact, Dome required so much
-      customization of the site that most of the content on the site
-      is controlled through a non-native Shopify backend.
+      I was hired to write the launch website for the IOT startup Dome. As the
+      only dev I managed the front end, data model, store, and analytics.
     `
   ],
 

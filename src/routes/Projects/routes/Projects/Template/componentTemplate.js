@@ -49,6 +49,8 @@ export default class ScoreFluent extends React.Component {
     const randomTextFontHeight = this.titleSizesByBreakpoint[this.props.curBreakpoint].fontHeight
     const randomTextWidth = randomTextFontHeight / 2 * text.length
 
+    const toolsPresent = this.props.toolNames.length > 0
+
     return (
       <View className={classes.mainContainer}>
         <article className={classes.projectContainer}>
@@ -93,14 +95,17 @@ export default class ScoreFluent extends React.Component {
               dangerouslySetInnerHTML={{__html: text}} />
           )}
 
-          <hr className={classes.stackRule} />
-          <h2>Tools</h2>
-          <div className={classes.stackContainer}>
-            {this.props.toolNames.map((name, i) => {
-              if (typeof name === 'string') return <Tool key={i} icon={name} show />
-              return <Tool key={i} isSvg={false} icon={name[0]} show />
-            })}
-          </div>
+
+          { toolsPresent ? (<hr className={classes.stackRule} />) : null }
+          { toolsPresent ? (<h2>Tools</h2>) : null }
+          { toolsPresent ? (
+            <div className={classes.stackContainer}>
+              {this.props.toolNames.map((name, i) => {
+                if (typeof name === 'string') return <Tool key={i} icon={name} show />
+                return <Tool key={i} isSvg={false} icon={name[0]} show />
+              })}
+            </div>
+          ) : null }
         </article>
       </View>
     )

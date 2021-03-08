@@ -58,7 +58,7 @@ p {
 }
 
 .siteLink {
-  border: 1px solid rgba(#FFF, 0);
+  border-bottom: 1px solid rgba(#FFF, 0.2);
   transition: border .8s;
 
   &:hover {
@@ -94,7 +94,7 @@ p {
 .stackContainer {
   min-height: 150px;
   width: 100%;
-  margin-bottom: 30px;
+  margin: 0 0 30px;
 
   display: flex;
   flex-direction: row;
@@ -135,7 +135,6 @@ p {
     height: 40px;
     width: 40px;
   }
-
 }
 
 @media screen and (min-width: $breakpoint-3) {
@@ -145,7 +144,7 @@ p {
 
   // ???
   .stackContainer {
-    margin: 100px;
+    margin-bottom: 100px;
   }
 }
 

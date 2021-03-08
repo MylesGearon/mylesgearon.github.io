@@ -28,20 +28,12 @@ export default {
 
   descriptions: [
     `
-      I was hired as an independent contractor to write most of the custom
-      code on the launch website for the IOT startup Dome. In addition
-      to writing HTML/(S)CSS/JS, I planned out and implemented all of
-      the schemas that power the CMS. In fact, Dome required so much
-      customization of the site that most of the content on the site
-      is controlled through a non-native Shopify backend.
+      I moved out to California at the start of 2020 (oops) to start work on
+      Apple's campus developing internal tools through a vendor company. I'd
+      love to detail the projects I worked on there, but Apple's as secretive as
+      you might expect.
     `
   ],
 
-  toolNames: [
-    'jquery',
-    'foundation',
-    'shopify',
-    'sass',
-    'mixpanel'
-  ]
+  toolNames: []
 }

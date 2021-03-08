@@ -28,20 +28,29 @@ export default {
 
   descriptions: [
     `
-      I was hired as an independent contractor to write most of the custom
-      code on the launch website for the IOT startup Dome. In addition
-      to writing HTML/(S)CSS/JS, I planned out and implemented all of
-      the schemas that power the CMS. In fact, Dome required so much
-      customization of the site that most of the content on the site
-      is controlled through a non-native Shopify backend.
+      JobBooks was a end-to-end SASS package for managing all the financials of
+      a small-to-medium construction company, and my first real production
+      application. I started on Jobbooks as an apprentice a few months after the
+      project's  \`rails new\` with no Ruby experience, and left as the #1
+      contributor and co-lead of development.
+    `,
+
+    `
+      During my with with it I worked on the greenfield development of estimation,
+      billing, bank reconciliation, payroll, sales tax tracking, analytics, and more.
+      I also had my hands on testing, DevOps, performance tuning, support, and
+      security.
     `
   ],
 
   toolNames: [
-    'jquery',
-    'foundation',
-    'shopify',
+    'rails',
+    'react',
+    's3',
     'sass',
-    'mixpanel'
+    'node',
+    'postgres',
+    'redis',
+    'docker'
   ]
 }
