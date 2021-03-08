@@ -123,7 +123,7 @@ export default class HomeView extends React.Component {
             width={titleSizes.width}
             fontHeight={titleSizes.fontHeight}
             animationRandomness={.5}
-            animationSpeed={1200}
+            animationSpeed={1000}
             animationDuration={firstAnimationDuration}
             animate='in'
             homePage />
@@ -132,7 +132,7 @@ export default class HomeView extends React.Component {
             text="I'm a Fullstack Web Dev from Chicago."
             width={subtitleSizes.width}
             fontHeight={subtitleSizes.fontHeight}
-            animationSpeed={600}
+            animationSpeed={250}
             animationRandomness={0.5}
             animationDuration={secondAnimationDuration}
             animate={this.state.animateDescription}

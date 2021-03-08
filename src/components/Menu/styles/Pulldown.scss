@@ -54,7 +54,7 @@ $logo-width: $logo-height*7/6;
     transition: color ease-in-out 500ms;
   }
 
-  &::before {
+  &.activeRoute::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -64,16 +64,17 @@ $logo-width: $logo-height*7/6;
     width: 100%;
     background: white;
 
-    transition: transform ease-in-out 500ms;
-    transform: rotateY(-90deg);
+    transition: transform ease-in-out 800ms;
+    transform: translateX(-100px);
   }
 
   &.activeRoute.active {
-
     * {
       color: black;
     }
+  }
 
+  &.active {
     &::before {
       transform: none;
     }

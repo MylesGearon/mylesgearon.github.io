@@ -69,7 +69,7 @@ export default class Pulldown extends React.Component {
                 tagType='a'
                 fontHeight={fontHeight}
                 width={link.text.length * fontHeight / 2}
-                animationSpeed={1000}
+                animationSpeed={650}
                 animationDuration={this.animationDuration}
                 animate={this.props.expanded ? 'in' : 'out'} />
             </link.type>

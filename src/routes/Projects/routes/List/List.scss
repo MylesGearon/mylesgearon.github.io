@@ -27,6 +27,7 @@
   transition: opacity 1s, transform 1s, box-shadow 1s, background 1s, border 1s;
 
   text-decoration: none;
+  border-radius: 4px;
 
   .title, hr, .description {
     margin: 5px 0;
@@ -52,8 +53,8 @@
   }
 
   &:hover {
-    background: rgba(#FFF, .2);
-    box-shadow: 0 0 10px 2px $lightgray;
+    background: rgba(#777, .2);
+    box-shadow: 0 0 20px 2px #333;
   }
 
 }
