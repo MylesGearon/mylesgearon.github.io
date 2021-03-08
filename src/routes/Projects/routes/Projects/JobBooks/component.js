@@ -1,5 +1,5 @@
 export default {
-  title: 'Dome Home Automation',
+  title: 'JobBooks by ComputerEase',
   titleSizesByBreakpoint: {
     0: {
       fontHeight: 25
@@ -22,8 +22,8 @@ export default {
   },
   placeholderImg: require('./assets/1-placeholder.png'),
   img: require('./assets/1.png'),
-  demoUrl: 'https://domeha.com',
-  demoText: 'domeha.com',
+  demoUrl: null,
+  demoText: null,
   githubUrl: null,
 
   descriptions: [
